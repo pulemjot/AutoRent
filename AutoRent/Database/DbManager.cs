@@ -115,6 +115,8 @@ namespace AutoRent.Database
             using (var ctx = new AppDbContext())
             {
                 carRent.LeaseStarted = DateTime.Now;
+                var car = ctx.Cars.First(x => x.ID == carRent.CarID);
+                car.ClientID = carRent.ClientID;
                 ctx.Rents.Add(carRent);
                 ctx.SaveChanges();
             }
@@ -126,6 +128,8 @@ namespace AutoRent.Database
             {
                 var exisitngRent = ctx.Rents.First(x => x.ClientID == clientID && x.CarID == carID);
                 exisitngRent.LeaseEnded = DateTime.Now;
+                var car = ctx.Cars.First(x => x.ID == carID);
+                car.ClientID = null;
                 ctx.SaveChanges();
             }
         }

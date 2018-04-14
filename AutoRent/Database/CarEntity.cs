@@ -14,14 +14,14 @@ namespace AutoRent.Database
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ID { get; set; }
         [Required()]
-        public string RegNumber { get; set; }
+        public string RegNumber { get; set; } // add, update
         [Required]
-        public string Vendor { get; set; }
+        public string Vendor { get; set; } // add
         [Required]
-        public string Model { get; set; }
+        public string Model { get; set; } // add
         public int Year { get; set; }
-        public GearUnitType GearUnitType { get; set; }
-        public double RentPricePerDay { get; set; }
+        public GearUnitType GearUnitType { get; set; } // add
+        public double RentPricePerDay { get; set; } // add, update
         public int? ClientID { get; set; }
         [ForeignKey(nameof(ClientID))]
         public ClientEntity CurrentClient { get; set; }
