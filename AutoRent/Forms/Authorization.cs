@@ -1,17 +1,21 @@
-﻿using AutoRent.Database;
-using AutoRent.Forms;
-using System;
+﻿using System;
 using System.Windows.Forms;
+using AutoRent.Database;
+using AutoRent.Forms;
+using AutoRent.Models;
 
-namespace AutoRent
-{
+namespace AutoRent {
     public partial class Authorization : Form
     {
         private const string LoginFailed = "The username or password is incorrect.";
         private const string ConnectionFailed = "Could not establish connection with database.";
+        LoginModel loginModel = new LoginModel();
+
         public Authorization()
         {
             InitializeComponent();
+            loginBox.DataBindings.Add(nameof(TextBox.Text), loginModel, nameof(LoginModel.UserName));
+            passwordBox.DataBindings.Add(nameof(TextBox.Text), loginModel, nameof(LoginModel.Password));
         }
 
         private void LoginButton_Click(object sender, EventArgs e)
@@ -19,7 +23,7 @@ namespace AutoRent
             var mgr = new DbManager();
             try
             {
-                var result = mgr.Login(loginBox.Text, passwordBox.Text);
+                var result = mgr.Login(loginModel.UserName, loginModel.Password);
                 
                 if (!result)
                 {
@@ -38,7 +42,6 @@ namespace AutoRent
             {
                 InvalidLoginLabel.Text = ConnectionFailed;
                 InvalidLoginLabel.Visible = true;
-                Console.WriteLine(ex);
                 throw;
             }
         }

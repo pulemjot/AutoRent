@@ -40,6 +40,7 @@
             this.ViewClients.TabIndex = 0;
             this.ViewClients.Text = "View Clients";
             this.ViewClients.UseVisualStyleBackColor = true;
+            this.ViewClients.Click += new System.EventHandler(this.ViewClients_Click);
             // 
             // ViewCars
             // 
@@ -49,6 +50,7 @@
             this.ViewCars.TabIndex = 1;
             this.ViewCars.Text = "View Cars";
             this.ViewCars.UseVisualStyleBackColor = true;
+            this.ViewCars.Click += new System.EventHandler(this.ViewCars_Click);
             // 
             // MainPanel
             // 
@@ -57,7 +59,10 @@
             this.ClientSize = new System.Drawing.Size(284, 171);
             this.Controls.Add(this.ViewCars);
             this.Controls.Add(this.ViewClients);
+            this.MaximizeBox = false;
             this.Name = "MainPanel";
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Main Panel";
             this.ResumeLayout(false);
 
