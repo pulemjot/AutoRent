@@ -1,4 +1,6 @@
-﻿namespace AutoRent
+﻿using System.Windows.Forms;
+
+namespace AutoRent
 {
     partial class Authorization
     {
@@ -103,10 +105,13 @@
             this.Controls.Add(this.loginBox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Authorization";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Authorization";
             this.ResumeLayout(false);
+            this.FormBorderStyle = FormBorderStyle.FixedDialog;
             this.PerformLayout();
 
         }

@@ -1,4 +1,6 @@
-﻿namespace AutoRent.Forms
+﻿using System.Windows.Forms;
+
+namespace AutoRent.Forms
 {
     partial class AddNewClient
     {
@@ -167,10 +169,12 @@
             this.Controls.Add(this.LastName);
             this.Controls.Add(this.FirstName);
             this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "AddNewClient";
             this.Text = "Add New Client";
             this.ResumeLayout(false);
             this.PerformLayout();
+            this.FormBorderStyle = FormBorderStyle.FixedDialog;
 
         }
 

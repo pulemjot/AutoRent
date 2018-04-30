@@ -65,6 +65,7 @@
             this.EditClient.TabIndex = 1;
             this.EditClient.Text = "Edit Client";
             this.EditClient.UseVisualStyleBackColor = true;
+            this.EditClient.Click += new System.EventHandler(this.EditClient_Click);
             // 
             // RentCar
             // 
@@ -174,6 +175,7 @@
             this.ClientSize = new System.Drawing.Size(571, 290);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.MinimizeBox = false;
             this.Name = "ViewClients";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ViewClients";

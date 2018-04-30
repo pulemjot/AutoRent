@@ -1,4 +1,6 @@
-﻿namespace AutoRent.Forms
+﻿using System.Windows.Forms;
+
+namespace AutoRent.Forms
 {
     partial class MainPanel
     {
@@ -60,10 +62,12 @@
             this.Controls.Add(this.ViewCars);
             this.Controls.Add(this.ViewClients);
             this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "MainPanel";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Main Panel";
+            this.FormBorderStyle = FormBorderStyle.FixedDialog;
             this.ResumeLayout(false);
 
         }

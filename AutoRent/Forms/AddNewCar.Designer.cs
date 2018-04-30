@@ -1,4 +1,6 @@
-﻿namespace AutoRent.Forms
+﻿using System.Windows.Forms;
+
+namespace AutoRent.Forms
 {
     partial class AddNewCar
     {
@@ -146,7 +148,7 @@
             // ButtonSave
             // 
             this.ButtonSave.Location = new System.Drawing.Point(12, 196);
-            this.ButtonSave.Name = "SaveButton";
+            this.ButtonSave.Name = "ButtonSave";
             this.ButtonSave.Size = new System.Drawing.Size(75, 23);
             this.ButtonSave.TabIndex = 13;
             this.ButtonSave.Text = "Save";
@@ -161,7 +163,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(333, 242);
-            this.Controls.Add(ButtonSave);
+            this.Controls.Add(this.ButtonSave);
             this.Controls.Add(this.GearUnitTypeBox);
             this.Controls.Add(this.RentPricePerDayBox);
             this.Controls.Add(this.YearBox);
@@ -175,11 +177,13 @@
             this.Controls.Add(this.Vendor);
             this.Controls.Add(this.RegNumber);
             this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "AddNewCar";
             this.Text = "AddNewCar";
             ((System.ComponentModel.ISupportInitialize)(this.carEntityBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
+            this.FormBorderStyle = FormBorderStyle.FixedDialog;
 
         }
 

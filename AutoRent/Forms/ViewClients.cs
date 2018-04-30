@@ -16,5 +16,11 @@ namespace AutoRent.Forms {
             var dlg = new AddNewClient();
             dlg.ShowDialog(this);
         }
+
+        private void EditClient_Click(object sender, System.EventArgs e)
+        {
+            var dlg = new EditClient();
+            dlg.ShowDialog(this);
+        }
     }
 }
