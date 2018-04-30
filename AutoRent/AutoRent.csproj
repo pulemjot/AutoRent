@@ -83,6 +83,12 @@
     <Compile Include="Forms\EditCar.Designer.cs">
       <DependentUpon>EditCar.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\EditClient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EditClient.Designer.cs">
+      <DependentUpon>EditClient.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\MainPanel.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -121,6 +127,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\EditCar.resx">
       <DependentUpon>EditCar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EditClient.resx">
+      <DependentUpon>EditClient.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainPanel.resx">
       <DependentUpon>MainPanel.cs</DependentUpon>

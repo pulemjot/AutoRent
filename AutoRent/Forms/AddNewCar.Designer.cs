@@ -1,4 +1,6 @@
-﻿namespace AutoRent.Forms
+﻿using System.Windows.Forms;
+
+namespace AutoRent.Forms
 {
     partial class AddNewCar
     {
@@ -176,11 +178,13 @@
             this.Controls.Add(this.Vendor);
             this.Controls.Add(this.RegNumber);
             this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "AddNewCar";
             this.Text = "AddNewCar";
             ((System.ComponentModel.ISupportInitialize)(this.carEntityBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
+            this.FormBorderStyle = FormBorderStyle.FixedDialog;
 
         }
 

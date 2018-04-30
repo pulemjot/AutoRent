@@ -174,6 +174,7 @@
             this.ClientSize = new System.Drawing.Size(669, 335);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.MinimizeBox = false;
             this.Name = "ViewCars";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "View Cars";
