@@ -1,16 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace AutoRent.Database
-{
-    class CarEntity
-    {
+namespace AutoRent.Database {
+    class CarEntity {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ID { get; set; }
         [Required()]
@@ -25,5 +18,19 @@ namespace AutoRent.Database
         public int? ClientID { get; set; }
         [ForeignKey(nameof(ClientID))]
         public ClientEntity CurrentClient { get; set; }
+
+        public override Boolean Equals(Object obj) {
+            if (ReferenceEquals(null, obj))
+                return false;
+            if (ReferenceEquals(this, obj))
+                return true;
+            return obj is CarEntity other && Equals(other);
+        }
+        protected bool Equals(CarEntity other) {
+            return ID == other.ID;
+        }
+        public override int GetHashCode() {
+            return ID;
+        }
     }
 }
