@@ -173,13 +173,15 @@ namespace AutoRent.Forms
             this.Controls.Add(this.Model);
             this.Controls.Add(this.Vendor);
             this.Controls.Add(this.RegNumber);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "EditCar";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Edit Car";
             this.ResumeLayout(false);
             this.PerformLayout();
-            this.FormBorderStyle = FormBorderStyle.FixedDialog;
+
         }
 
         #endregion

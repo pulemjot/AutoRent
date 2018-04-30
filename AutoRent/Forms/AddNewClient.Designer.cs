@@ -168,13 +168,14 @@ namespace AutoRent.Forms
             this.Controls.Add(this.PersonalNumber);
             this.Controls.Add(this.LastName);
             this.Controls.Add(this.FirstName);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "AddNewClient";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Add New Client";
             this.ResumeLayout(false);
             this.PerformLayout();
-            this.FormBorderStyle = FormBorderStyle.FixedDialog;
 
         }
 
