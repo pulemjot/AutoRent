@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.RegNumber = new System.Windows.Forms.Label();
             this.Vendor = new System.Windows.Forms.Label();
             this.Model = new System.Windows.Forms.Label();
@@ -41,6 +42,8 @@
             this.RentPricePerDayBox = new System.Windows.Forms.TextBox();
             this.GearUnitTypeBox = new System.Windows.Forms.ComboBox();
             this.SaveButton = new System.Windows.Forms.Button();
+            this.carEntityBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.carEntityBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // RegNumber
@@ -134,7 +137,6 @@
             // 
             // GearUnitTypeBox
             // 
-            this.GearUnitTypeBox.DisplayMember = "Manual";
             this.GearUnitTypeBox.FormattingEnabled = true;
             this.GearUnitTypeBox.Location = new System.Drawing.Point(188, 134);
             this.GearUnitTypeBox.Name = "GearUnitTypeBox";
@@ -149,6 +151,10 @@
             this.SaveButton.TabIndex = 13;
             this.SaveButton.Text = "Save";
             this.SaveButton.UseVisualStyleBackColor = true;
+            // 
+            // carEntityBindingSource
+            // 
+            this.carEntityBindingSource.DataSource = typeof(AutoRent.Database.CarEntity);
             // 
             // AddNewCar
             // 
@@ -170,6 +176,7 @@
             this.Controls.Add(this.RegNumber);
             this.Name = "AddNewCar";
             this.Text = "AddNewCar";
+            ((System.ComponentModel.ISupportInitialize)(this.carEntityBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -190,5 +197,6 @@
         private System.Windows.Forms.TextBox RentPricePerDayBox;
         private System.Windows.Forms.ComboBox GearUnitTypeBox;
         private System.Windows.Forms.Button SaveButton;
+        private System.Windows.Forms.BindingSource carEntityBindingSource;
     }
 }

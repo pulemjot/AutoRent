@@ -15,7 +15,6 @@ namespace AutoRent.Forms
         public AddNewCar()
         {
             InitializeComponent();
-            
         }
 
         
