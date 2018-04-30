@@ -59,6 +59,18 @@
     <Compile Include="Database\DbManager.cs" />
     <Compile Include="Database\GearUnitType.cs" />
     <Compile Include="Database\Operator.cs" />
+    <Compile Include="Forms\AddNewCar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddNewCar.Designer.cs">
+      <DependentUpon>AddNewCar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AddNewClient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddNewClient.Designer.cs">
+      <DependentUpon>AddNewClient.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Authorization.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -92,6 +104,12 @@
     <Compile Include="Models\ViewModelBase.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\AddNewCar.resx">
+      <DependentUpon>AddNewCar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AddNewClient.resx">
+      <DependentUpon>AddNewClient.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Authorization.resx">
       <DependentUpon>Authorization.cs</DependentUpon>
     </EmbeddedResource>

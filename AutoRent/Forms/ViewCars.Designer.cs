@@ -83,7 +83,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(570, 60);
+            this.panel1.Size = new System.Drawing.Size(669, 60);
             this.panel1.TabIndex = 4;
             // 
             // panel2
@@ -92,7 +92,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 60);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(570, 275);
+            this.panel2.Size = new System.Drawing.Size(669, 275);
             this.panel2.TabIndex = 5;
             // 
             // CarGridView
@@ -116,7 +116,7 @@
             this.CarGridView.Name = "CarGridView";
             this.CarGridView.ReadOnly = true;
             this.CarGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.CarGridView.Size = new System.Drawing.Size(570, 275);
+            this.CarGridView.Size = new System.Drawing.Size(669, 275);
             this.CarGridView.TabIndex = 0;
             // 
             // vendorDataGridViewTextBoxColumn
@@ -169,13 +169,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(570, 335);
+            this.ClientSize = new System.Drawing.Size(669, 335);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "ViewCars";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "View Cars";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.CarGridView)).EndInit();

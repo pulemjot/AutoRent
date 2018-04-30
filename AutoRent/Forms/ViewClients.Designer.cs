@@ -35,12 +35,12 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.ClientGridView = new System.Windows.Forms.DataGridView();
-            this.Clients = new System.Windows.Forms.BindingSource(this.components);
             this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.phoneNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.activeRentCountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Clients = new System.Windows.Forms.BindingSource(this.components);
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ClientGridView)).BeginInit();
@@ -55,6 +55,7 @@
             this.AddClient.TabIndex = 0;
             this.AddClient.Text = "Add Client";
             this.AddClient.UseVisualStyleBackColor = true;
+            this.AddClient.Click += new System.EventHandler(this.AddClient_Click);
             // 
             // EditClient
             // 
@@ -127,10 +128,6 @@
             this.ClientGridView.Size = new System.Drawing.Size(571, 227);
             this.ClientGridView.TabIndex = 0;
             // 
-            // Clients
-            // 
-            this.Clients.DataSource = typeof(AutoRent.Database.ClientEntity);
-            // 
             // firstNameDataGridViewTextBoxColumn
             // 
             this.firstNameDataGridViewTextBoxColumn.DataPropertyName = "FirstName";
@@ -166,6 +163,10 @@
             this.activeRentCountDataGridViewTextBoxColumn.Name = "activeRentCountDataGridViewTextBoxColumn";
             this.activeRentCountDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // Clients
+            // 
+            this.Clients.DataSource = typeof(AutoRent.Database.ClientEntity);
+            // 
             // ViewClients
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -176,7 +177,6 @@
             this.Name = "ViewClients";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ViewClients";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ClientGridView)).EndInit();

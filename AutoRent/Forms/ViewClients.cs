@@ -10,5 +10,11 @@ namespace AutoRent.Forms {
             InitializeComponent();
             Clients.DataSource = _mgr.GetClients();
         }
+
+        private void AddClient_Click(object sender, System.EventArgs e)
+        {
+            var dlg = new AddNewClient();
+            dlg.ShowDialog(this);
+        }
     }
 }
