@@ -73,7 +73,7 @@
             this.DeleteCar.TabIndex = 2;
             this.DeleteCar.Text = "Delete Car";
             this.DeleteCar.UseVisualStyleBackColor = true;
-            this.DeleteCar.Click += new System.EventHandler(this.DeleteCar_Click);
+            this.DeleteCar.Click += new System.EventHandler(this.RemoveCar_Click);
             // 
             // panel1
             // 

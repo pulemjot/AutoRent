@@ -12,7 +12,7 @@ namespace AutoRent.Forms {
 
 
 
-        void DeleteCar_Click(object sender, EventArgs e) {
+        void RemoveCar_Click(object sender, EventArgs e) {
             DataGridViewSelectedRowCollection rows = CarGridView.SelectedRows;
             if (rows.Count == 0) { return; }
             CarEntity car = (CarEntity)rows[0].DataBoundItem;
