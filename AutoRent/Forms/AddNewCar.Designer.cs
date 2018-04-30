@@ -41,7 +41,7 @@
             this.YearBox = new System.Windows.Forms.TextBox();
             this.RentPricePerDayBox = new System.Windows.Forms.TextBox();
             this.GearUnitTypeBox = new System.Windows.Forms.ComboBox();
-            this.SaveButton = new System.Windows.Forms.Button();
+            this.ButtonSave = new System.Windows.Forms.Button();
             this.carEntityBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.carEntityBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -143,14 +143,14 @@
             this.GearUnitTypeBox.Size = new System.Drawing.Size(121, 21);
             this.GearUnitTypeBox.TabIndex = 12;
             // 
-            // SaveButton
+            // ButtonSave
             // 
-            this.SaveButton.Location = new System.Drawing.Point(12, 196);
-            this.SaveButton.Name = "SaveButton";
-            this.SaveButton.Size = new System.Drawing.Size(75, 23);
-            this.SaveButton.TabIndex = 13;
-            this.SaveButton.Text = "Save";
-            this.SaveButton.UseVisualStyleBackColor = true;
+            this.ButtonSave.Location = new System.Drawing.Point(12, 196);
+            this.ButtonSave.Name = "ButtonSave";
+            this.ButtonSave.Size = new System.Drawing.Size(75, 23);
+            this.ButtonSave.TabIndex = 13;
+            this.ButtonSave.Text = "Save";
+            this.ButtonSave.UseVisualStyleBackColor = true;
             // 
             // carEntityBindingSource
             // 
@@ -160,8 +160,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(333, 242);
-            this.Controls.Add(this.SaveButton);
+            this.ClientSize = new System.Drawing.Size(333, 235);
+            this.Controls.Add(this.ButtonSave);
             this.Controls.Add(this.GearUnitTypeBox);
             this.Controls.Add(this.RentPricePerDayBox);
             this.Controls.Add(this.YearBox);
@@ -174,6 +174,7 @@
             this.Controls.Add(this.Model);
             this.Controls.Add(this.Vendor);
             this.Controls.Add(this.RegNumber);
+            this.MaximizeBox = false;
             this.Name = "AddNewCar";
             this.Text = "AddNewCar";
             ((System.ComponentModel.ISupportInitialize)(this.carEntityBindingSource)).EndInit();
@@ -196,7 +197,7 @@
         private System.Windows.Forms.TextBox YearBox;
         private System.Windows.Forms.TextBox RentPricePerDayBox;
         private System.Windows.Forms.ComboBox GearUnitTypeBox;
-        private System.Windows.Forms.Button SaveButton;
+        private System.Windows.Forms.Button ButtonSave;
         private System.Windows.Forms.BindingSource carEntityBindingSource;
     }
 }

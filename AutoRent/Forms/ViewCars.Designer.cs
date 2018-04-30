@@ -55,6 +55,7 @@
             this.AddCar.TabIndex = 0;
             this.AddCar.Text = "Add Car";
             this.AddCar.UseVisualStyleBackColor = true;
+            this.AddCar.Click += new System.EventHandler(this.AddCar_Click);
             // 
             // EditCar
             // 
@@ -64,6 +65,7 @@
             this.EditCar.TabIndex = 1;
             this.EditCar.Text = "Edit Car";
             this.EditCar.UseVisualStyleBackColor = true;
+            this.EditCar.Click += new System.EventHandler(this.EditCar_Click);
             // 
             // DeleteCar
             // 
