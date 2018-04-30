@@ -6,7 +6,7 @@ namespace AutoRent.Database {
     class CarEntity {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ID { get; set; }
-        [Required()]
+        [Required, RegularExpression(@"LV-\d{4}")]
         public string RegNumber { get; set; } // add, update
         [Required]
         public string Vendor { get; set; } // add
