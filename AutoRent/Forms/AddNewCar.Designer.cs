@@ -1,9 +1,5 @@
-﻿using System.Windows.Forms;
-
-namespace AutoRent.Forms
-{
-    partial class AddNewCar
-    {
+﻿namespace AutoRent.Forms {
+    partial class AddNewCar {
         /// <summary>
         /// Required designer variable.
         /// </summary>
@@ -13,10 +9,8 @@ namespace AutoRent.Forms
         /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing && (components != null))
-            {
+        protected override void Dispose(bool disposing) {
+            if (disposing && (components != null)) {
                 components.Dispose();
             }
             base.Dispose(disposing);
@@ -28,8 +22,7 @@ namespace AutoRent.Forms
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
-        private void InitializeComponent()
-        {
+        private void InitializeComponent() {
             this.components = new System.ComponentModel.Container();
             this.RegNumber = new System.Windows.Forms.Label();
             this.Vendor = new System.Windows.Forms.Label();
@@ -129,6 +122,7 @@ namespace AutoRent.Forms
             this.YearBox.Name = "YearBox";
             this.YearBox.Size = new System.Drawing.Size(121, 20);
             this.YearBox.TabIndex = 9;
+            this.YearBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBoxIntegerKeyPress);
             // 
             // RentPricePerDayBox
             // 
@@ -136,6 +130,7 @@ namespace AutoRent.Forms
             this.RentPricePerDayBox.Name = "RentPricePerDayBox";
             this.RentPricePerDayBox.Size = new System.Drawing.Size(121, 20);
             this.RentPricePerDayBox.TabIndex = 11;
+            this.RentPricePerDayBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBoxDoubleKeyPress);
             // 
             // GearUnitTypeBox
             // 

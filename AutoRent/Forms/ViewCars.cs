@@ -29,14 +29,15 @@ namespace AutoRent.Forms {
             }
         }
 
-        private void AddCar_Click(object sender, EventArgs e)
-        {
+        private void AddCar_Click(object sender, EventArgs e) {
             var dlg = new AddNewCar();
             dlg.ShowDialog(this);
+            if (dlg.AddedCar != null) {
+                Cars.Add(dlg.AddedCar);
+            }
         }
 
-        private void EditCar_Click(object sender, EventArgs e)
-        {
+        private void EditCar_Click(object sender, EventArgs e) {
             var dlg = new EditCar();
             dlg.ShowDialog(this);
         }
