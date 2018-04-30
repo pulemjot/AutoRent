@@ -71,7 +71,7 @@
             // 
             // LoginButton
             // 
-            this.LoginButton.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.LoginButton.Cursor = System.Windows.Forms.Cursors.Default;
             this.LoginButton.Location = new System.Drawing.Point(15, 101);
             this.LoginButton.Name = "LoginButton";
             this.LoginButton.Size = new System.Drawing.Size(75, 23);
@@ -104,6 +104,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "Authorization";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Authorization";
             this.ResumeLayout(false);
             this.PerformLayout();
