@@ -145,13 +145,12 @@
             // 
             // ButtonSave
             // 
-            this.ButtonSave.Location = new System.Drawing.Point(12, 196);
-            this.ButtonSave.Name = "ButtonSave";
-            this.ButtonSave.Size = new System.Drawing.Size(75, 23);
-            this.ButtonSave.TabIndex = 13;
-            this.ButtonSave.Text = "Save";
-            this.ButtonSave.UseVisualStyleBackColor = true;
-            this.ButtonSave.Click += new System.EventHandler(this.ButtonSave_Click);
+            this.SaveButton.Location = new System.Drawing.Point(12, 196);
+            this.SaveButton.Name = "SaveButton";
+            this.SaveButton.Size = new System.Drawing.Size(75, 23);
+            this.SaveButton.TabIndex = 13;
+            this.SaveButton.Text = "Save";
+            this.SaveButton.UseVisualStyleBackColor = true;
             // 
             // carEntityBindingSource
             // 
@@ -162,7 +161,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(333, 242);
-            this.Controls.Add(this.ButtonSave);
+            this.Controls.Add(this.SaveButton);
             this.Controls.Add(this.GearUnitTypeBox);
             this.Controls.Add(this.RentPricePerDayBox);
             this.Controls.Add(this.YearBox);
@@ -175,6 +174,7 @@
             this.Controls.Add(this.Model);
             this.Controls.Add(this.Vendor);
             this.Controls.Add(this.RegNumber);
+            this.MaximizeBox = false;
             this.Name = "AddNewCar";
             this.Text = "AddNewCar";
             ((System.ComponentModel.ISupportInitialize)(this.carEntityBindingSource)).EndInit();

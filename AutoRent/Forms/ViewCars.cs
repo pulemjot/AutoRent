@@ -28,5 +28,17 @@ namespace AutoRent.Forms {
                 MessageBox.Show(ex.Message, "Remove Car Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void AddCar_Click(object sender, EventArgs e)
+        {
+            var dlg = new AddNewCar();
+            dlg.ShowDialog(this);
+        }
+
+        private void EditCar_Click(object sender, EventArgs e)
+        {
+            var dlg = new EditCar();
+            dlg.ShowDialog(this);
+        }
     }
 }

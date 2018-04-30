@@ -77,6 +77,12 @@
     <Compile Include="Forms\Authorization.Designer.cs">
       <DependentUpon>Authorization.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\EditCar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EditCar.Designer.cs">
+      <DependentUpon>EditCar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\MainPanel.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -112,6 +118,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Authorization.resx">
       <DependentUpon>Authorization.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EditCar.resx">
+      <DependentUpon>EditCar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainPanel.resx">
       <DependentUpon>MainPanel.cs</DependentUpon>

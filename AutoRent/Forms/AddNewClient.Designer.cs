@@ -40,7 +40,7 @@
             this.PhoneNumberBox = new System.Windows.Forms.TextBox();
             this.EmailBox = new System.Windows.Forms.TextBox();
             this.AddressBox = new System.Windows.Forms.TextBox();
-            this.SaveButton = new System.Windows.Forms.Button();
+            this.ButtonSave = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // FirstName
@@ -139,21 +139,21 @@
             this.AddressBox.Size = new System.Drawing.Size(100, 20);
             this.AddressBox.TabIndex = 11;
             // 
-            // SaveButton
+            // ButtonSave
             // 
-            this.SaveButton.Location = new System.Drawing.Point(15, 240);
-            this.SaveButton.Name = "SaveButton";
-            this.SaveButton.Size = new System.Drawing.Size(75, 23);
-            this.SaveButton.TabIndex = 12;
-            this.SaveButton.Text = "Save";
-            this.SaveButton.UseVisualStyleBackColor = true;
+            this.ButtonSave.Location = new System.Drawing.Point(15, 240);
+            this.ButtonSave.Name = "ButtonSave";
+            this.ButtonSave.Size = new System.Drawing.Size(75, 23);
+            this.ButtonSave.TabIndex = 12;
+            this.ButtonSave.Text = "Save";
+            this.ButtonSave.UseVisualStyleBackColor = true;
             // 
             // AddNewClient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(291, 281);
-            this.Controls.Add(this.SaveButton);
+            this.Controls.Add(this.ButtonSave);
             this.Controls.Add(this.AddressBox);
             this.Controls.Add(this.EmailBox);
             this.Controls.Add(this.PhoneNumberBox);
@@ -166,6 +166,7 @@
             this.Controls.Add(this.PersonalNumber);
             this.Controls.Add(this.LastName);
             this.Controls.Add(this.FirstName);
+            this.MaximizeBox = false;
             this.Name = "AddNewClient";
             this.Text = "Add New Client";
             this.ResumeLayout(false);
@@ -187,6 +188,6 @@
         private System.Windows.Forms.TextBox PhoneNumberBox;
         private System.Windows.Forms.TextBox EmailBox;
         private System.Windows.Forms.TextBox AddressBox;
-        private System.Windows.Forms.Button SaveButton;
+        private System.Windows.Forms.Button ButtonSave;
     }
 }
