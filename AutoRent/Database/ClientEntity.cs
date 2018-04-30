@@ -2,14 +2,9 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace AutoRent.Database
-{
-    class ClientEntity
-    {
+namespace AutoRent.Database {
+    class ClientEntity {
         public int ID { get; set; }
         [Required]
         public string FirstName { get; set; }
@@ -25,5 +20,19 @@ namespace AutoRent.Database
         [NotMapped]
         public int ActiveRentCount { get; set; }
         public ICollection<CarRent> Rents { get; set; }
+
+        public override Boolean Equals(Object obj) {
+            if (ReferenceEquals(null, obj))
+                return false;
+            if (ReferenceEquals(this, obj))
+                return true;
+            return obj is ClientEntity other && Equals(other);
+        }
+        protected bool Equals(ClientEntity other) {
+            return ID == other.ID;
+        }
+        public override int GetHashCode() {
+            return ID;
+        }
     }
 }

@@ -1,19 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using System.Data.Entity.Migrations;
 using System.Windows.Forms;
+using AutoRent.Migrations;
 
-namespace AutoRent
-{
-    static class Program
-    {
+namespace AutoRent {
+    static class Program {
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
         [STAThread]
-        static void Main()
-        {
+        static void Main() {
+            var configuration = new Configuration();
+            var dbMigrator = new DbMigrator(configuration);
+            dbMigrator.Update();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Authorization());
