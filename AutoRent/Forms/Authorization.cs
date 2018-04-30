@@ -23,7 +23,7 @@ namespace AutoRent {
             var mgr = new DbManager();
             try
             {
-                var result = mgr.Login(loginModel.UserName, loginModel.Password);
+                var result = mgr.VerifyCredentials(loginModel.UserName, loginModel.Password);
                 
                 if (!result)
                 {
