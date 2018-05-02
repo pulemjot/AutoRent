@@ -7,8 +7,8 @@ using AutoRent.Models;
 namespace AutoRent {
     public partial class Authorization : Form
     {
-        private const string LoginFailed = "The username or password is incorrect.";
-        private const string ConnectionFailed = "Could not establish connection with database.";
+        const string LoginFailed = "The username or password is incorrect.";
+        const string ConnectionFailed = "Could not establish connection with database.";
         LoginModel loginModel = new LoginModel();
 
         public Authorization()
@@ -18,7 +18,7 @@ namespace AutoRent {
             passwordBox.DataBindings.Add(nameof(TextBox.Text), loginModel, nameof(LoginModel.Password));
         }
 
-        private void LoginButton_Click(object sender, EventArgs e)
+        void LoginButton_Click(object sender, EventArgs e)
         {
             var mgr = new DbManager();
             try
@@ -34,9 +34,9 @@ namespace AutoRent {
 
                 InvalidLoginLabel.Visible = false;
                 var form = new MainPanel();
-                form.Closed += (s, args) => this.Close();
+                form.Closed += (s, args) => Close();
                 form.Show();
-                this.Hide();
+                Hide();
             }
             catch (Exception ex)
             {

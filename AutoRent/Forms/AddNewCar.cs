@@ -23,7 +23,7 @@ namespace AutoRent.Forms {
 
         public CarEntity AddedCar { get; private set; }
 
-        private void ButtonSave_Click(object sender, EventArgs e) {
+        void ButtonSave_Click(object sender, EventArgs e) {
             var ctx = new ValidationContext(_car);
             IList<ValidationResult> errors = new List<ValidationResult>();
             var sb = new StringBuilder();

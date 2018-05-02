@@ -103,42 +103,44 @@ namespace AutoRent.Forms
             // 
             this.FirstNameBox.Location = new System.Drawing.Point(157, 19);
             this.FirstNameBox.Name = "FirstNameBox";
-            this.FirstNameBox.Size = new System.Drawing.Size(100, 20);
+            this.FirstNameBox.Size = new System.Drawing.Size(240, 20);
             this.FirstNameBox.TabIndex = 6;
             // 
             // LastNameBox
             // 
             this.LastNameBox.Location = new System.Drawing.Point(157, 55);
             this.LastNameBox.Name = "LastNameBox";
-            this.LastNameBox.Size = new System.Drawing.Size(100, 20);
+            this.LastNameBox.Size = new System.Drawing.Size(240, 20);
             this.LastNameBox.TabIndex = 7;
             // 
             // PersonalNumberBox
             // 
             this.PersonalNumberBox.Location = new System.Drawing.Point(157, 92);
             this.PersonalNumberBox.Name = "PersonalNumberBox";
-            this.PersonalNumberBox.Size = new System.Drawing.Size(100, 20);
+            this.PersonalNumberBox.Size = new System.Drawing.Size(240, 20);
             this.PersonalNumberBox.TabIndex = 8;
             // 
             // PhoneNumberBox
             // 
             this.PhoneNumberBox.Location = new System.Drawing.Point(157, 129);
             this.PhoneNumberBox.Name = "PhoneNumberBox";
-            this.PhoneNumberBox.Size = new System.Drawing.Size(100, 20);
+            this.PhoneNumberBox.Size = new System.Drawing.Size(240, 20);
             this.PhoneNumberBox.TabIndex = 9;
             // 
             // EmailBox
             // 
             this.EmailBox.Location = new System.Drawing.Point(157, 163);
             this.EmailBox.Name = "EmailBox";
-            this.EmailBox.Size = new System.Drawing.Size(100, 20);
+            this.EmailBox.Size = new System.Drawing.Size(240, 20);
             this.EmailBox.TabIndex = 10;
             // 
             // AddressBox
             // 
             this.AddressBox.Location = new System.Drawing.Point(157, 200);
+            this.AddressBox.Multiline = true;
             this.AddressBox.Name = "AddressBox";
-            this.AddressBox.Size = new System.Drawing.Size(100, 20);
+            this.AddressBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.AddressBox.Size = new System.Drawing.Size(240, 63);
             this.AddressBox.TabIndex = 11;
             // 
             // ButtonSave
@@ -149,12 +151,13 @@ namespace AutoRent.Forms
             this.ButtonSave.TabIndex = 12;
             this.ButtonSave.Text = "Save";
             this.ButtonSave.UseVisualStyleBackColor = true;
+            this.ButtonSave.Click += new System.EventHandler(this.ButtonSave_Click);
             // 
             // AddNewClient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(291, 281);
+            this.ClientSize = new System.Drawing.Size(409, 281);
             this.Controls.Add(this.ButtonSave);
             this.Controls.Add(this.AddressBox);
             this.Controls.Add(this.EmailBox);

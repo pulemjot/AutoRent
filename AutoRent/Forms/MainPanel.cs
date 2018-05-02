@@ -9,12 +9,12 @@ namespace AutoRent.Forms {
             InitializeComponent();
         }
 
-        private void ViewClients_Click(object sender, EventArgs e) {
+        void ViewClients_Click(object sender, EventArgs e) {
             var dlg = new ViewClients();
             dlg.Show(this);
         }
 
-        private void ViewCars_Click(object sender, EventArgs e) {
+        void ViewCars_Click(object sender, EventArgs e) {
             var dlg = new ViewCars();
             dlg.Show(this);
         }

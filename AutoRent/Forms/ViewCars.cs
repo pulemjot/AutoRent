@@ -35,7 +35,7 @@ namespace AutoRent.Forms {
             }
         }
 
-        private void AddCar_Click(object sender, EventArgs e) {
+        void AddCar_Click(object sender, EventArgs e) {
             var dlg = new AddNewCar();
             dlg.ShowDialog(this);
             if (dlg.AddedCar != null) {
@@ -43,7 +43,7 @@ namespace AutoRent.Forms {
             }
         }
 
-        private void EditCar_Click(object sender, EventArgs e) {
+        void EditCar_Click(object sender, EventArgs e) {
             DataGridViewSelectedRowCollection rows = CarGridView.SelectedRows;
             if (rows.Count == 0) { return; }
             var car = (CarEntity)rows[0].DataBoundItem;
@@ -52,7 +52,7 @@ namespace AutoRent.Forms {
             refreshCarList();
         }
 
-        private void RefreshCarListButton_Click(object sender, EventArgs e) {
+        void RefreshCarListButton_Click(object sender, EventArgs e) {
             refreshCarList();
         }
     }
