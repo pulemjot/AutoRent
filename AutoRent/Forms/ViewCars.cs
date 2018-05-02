@@ -7,11 +7,13 @@ namespace AutoRent.Forms {
         readonly DbManager _mgr = new DbManager();
         public ViewCars() {
             InitializeComponent();
-            Cars.DataSource = _mgr.GetCars();
+            refreshCarList();
         }
 
 
-
+        void refreshCarList() {
+            Cars.DataSource = _mgr.GetCars();
+        }
         void RemoveCar_Click(object sender, EventArgs e) {
             DataGridViewSelectedRowCollection rows = CarGridView.SelectedRows;
             if (rows.Count == 0) { return; }
@@ -42,6 +44,10 @@ namespace AutoRent.Forms {
             var car = (CarEntity)rows[0].DataBoundItem;
             var dlg = new EditCar(car);
             dlg.ShowDialog(this);
+        }
+
+        private void RefreshCarListButton_Click(object sender, EventArgs e) {
+            refreshCarList();
         }
     }
 }

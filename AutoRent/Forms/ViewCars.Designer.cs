@@ -41,6 +41,7 @@
             this.gearUnitTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rentPricePerDayDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cars = new System.Windows.Forms.BindingSource(this.components);
+            this.RefreshCarListButton = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CarGridView)).BeginInit();
@@ -49,7 +50,7 @@
             // 
             // AddCar
             // 
-            this.AddCar.Location = new System.Drawing.Point(12, 21);
+            this.AddCar.Location = new System.Drawing.Point(93, 21);
             this.AddCar.Name = "AddCar";
             this.AddCar.Size = new System.Drawing.Size(75, 23);
             this.AddCar.TabIndex = 0;
@@ -59,7 +60,7 @@
             // 
             // EditCar
             // 
-            this.EditCar.Location = new System.Drawing.Point(104, 21);
+            this.EditCar.Location = new System.Drawing.Point(174, 21);
             this.EditCar.Name = "EditCar";
             this.EditCar.Size = new System.Drawing.Size(75, 23);
             this.EditCar.TabIndex = 1;
@@ -69,7 +70,7 @@
             // 
             // DeleteCar
             // 
-            this.DeleteCar.Location = new System.Drawing.Point(196, 21);
+            this.DeleteCar.Location = new System.Drawing.Point(255, 21);
             this.DeleteCar.Name = "DeleteCar";
             this.DeleteCar.Size = new System.Drawing.Size(75, 23);
             this.DeleteCar.TabIndex = 2;
@@ -79,6 +80,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.RefreshCarListButton);
             this.panel1.Controls.Add(this.AddCar);
             this.panel1.Controls.Add(this.EditCar);
             this.panel1.Controls.Add(this.DeleteCar);
@@ -167,6 +169,16 @@
             // 
             this.Cars.DataSource = typeof(AutoRent.Database.CarEntity);
             // 
+            // RefreshCarListButton
+            // 
+            this.RefreshCarListButton.Location = new System.Drawing.Point(12, 21);
+            this.RefreshCarListButton.Name = "RefreshCarListButton";
+            this.RefreshCarListButton.Size = new System.Drawing.Size(75, 23);
+            this.RefreshCarListButton.TabIndex = 3;
+            this.RefreshCarListButton.Text = "Refresh";
+            this.RefreshCarListButton.UseVisualStyleBackColor = true;
+            this.RefreshCarListButton.Click += new System.EventHandler(this.RefreshCarListButton_Click);
+            // 
             // ViewCars
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -201,5 +213,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn yearDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn gearUnitTypeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn rentPricePerDayDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button RefreshCarListButton;
     }
 }
