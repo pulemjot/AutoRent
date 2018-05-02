@@ -44,6 +44,7 @@ namespace AutoRent.Forms {
             var car = (CarEntity)rows[0].DataBoundItem;
             var dlg = new EditCar(car);
             dlg.ShowDialog(this);
+            refreshCarList();
         }
 
         private void RefreshCarListButton_Click(object sender, EventArgs e) {
