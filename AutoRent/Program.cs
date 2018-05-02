@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data.Entity.Migrations;
 using System.Windows.Forms;
+using AutoRent.Forms;
 using AutoRent.Migrations;
 
 namespace AutoRent {

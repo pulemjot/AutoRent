@@ -1,32 +1,26 @@
 ﻿using System;
 using System.Windows.Forms;
 using AutoRent.Database;
-using AutoRent.Forms;
 using AutoRent.Models;
 
-namespace AutoRent {
-    public partial class Authorization : Form
-    {
+namespace AutoRent.Forms {
+    public partial class Authorization : Form {
         const string LoginFailed = "The username or password is incorrect.";
         const string ConnectionFailed = "Could not establish connection with database.";
-        LoginModel loginModel = new LoginModel();
+        readonly LoginModel _loginModel = new LoginModel();
 
-        public Authorization()
-        {
+        public Authorization() {
             InitializeComponent();
-            loginBox.DataBindings.Add(nameof(TextBox.Text), loginModel, nameof(LoginModel.UserName));
-            passwordBox.DataBindings.Add(nameof(TextBox.Text), loginModel, nameof(LoginModel.Password));
+            loginBox.DataBindings.Add(nameof(TextBox.Text), _loginModel, nameof(LoginModel.UserName));
+            passwordBox.DataBindings.Add(nameof(TextBox.Text), _loginModel, nameof(LoginModel.Password));
         }
 
-        void LoginButton_Click(object sender, EventArgs e)
-        {
+        void LoginButton_Click(object sender, EventArgs e) {
             var mgr = new DbManager();
-            try
-            {
-                var result = mgr.VerifyCredentials(loginModel.UserName, loginModel.Password);
-                
-                if (!result)
-                {
+            try {
+                Boolean result = mgr.VerifyCredentials(_loginModel.UserName, _loginModel.Password);
+
+                if (!result) {
                     InvalidLoginLabel.Text = LoginFailed;
                     InvalidLoginLabel.Visible = true;
                     return;
@@ -37,9 +31,7 @@ namespace AutoRent {
                 form.Closed += (s, args) => Close();
                 form.Show();
                 Hide();
-            }
-            catch (Exception ex)
-            {
+            } catch (Exception ex) {
                 InvalidLoginLabel.Text = ConnectionFailed;
                 InvalidLoginLabel.Visible = true;
                 throw;

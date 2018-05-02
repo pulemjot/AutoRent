@@ -1,37 +1,27 @@
+using System;
+using System.Data.Entity.Migrations;
+using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 using AutoRent.Database;
-using Microsoft.Win32.SafeHandles;
 
-namespace AutoRent.Migrations
-{
-    using System;
-    using System.Data.Entity;
-    using System.Data.Entity.Migrations;
-    using System.Linq;
+namespace AutoRent.Migrations {
 
-    internal sealed class Configuration : DbMigrationsConfiguration<AppDbContext>
-    {
-        public Configuration()
-        {
+    internal sealed class Configuration : DbMigrationsConfiguration<AppDbContext> {
+        public Configuration() {
             AutomaticMigrationsEnabled = false;
         }
 
-        protected override void Seed(AppDbContext context)
-        {
-            if (!context.Operators.Any())
-            {
+        protected override void Seed(AppDbContext context) {
+            if (!context.Operators.Any()) {
                 string pwd = null;
-                using (var halg = HashAlgorithm.Create("sha256"))
-                {
-                    var hash = halg.ComputeHash(Encoding.Unicode.GetBytes("password"));
-                    foreach (var b in hash)
-                    {
+                using (HashAlgorithm halg = HashAlgorithm.Create("sha256")) {
+                    Byte[] hash = halg.ComputeHash(Encoding.Unicode.GetBytes("password"));
+                    foreach (Byte b in hash) {
                         pwd += $"{b:x2}";
                     }
                 }
-                var op = new Operator()
-                {
+                var op = new Operator() {
                     UserName = "admin",
                     HashedPassword = pwd
                 };
@@ -39,10 +29,8 @@ namespace AutoRent.Migrations
                 context.SaveChanges();
             }
 
-            if (!context.Cars.Any())
-            {
-                var car = new CarEntity
-                {
+            if (!context.Cars.Any()) {
+                var car = new CarEntity {
                     RegNumber = "ED-3124",
                     GearUnitType = GearUnitType.Manual,
                     Model = "RAV-4",
@@ -52,8 +40,7 @@ namespace AutoRent.Migrations
                 };
                 context.Cars.Add(car);
                 context.SaveChanges();
-                car = new CarEntity
-                {
+                car = new CarEntity {
                     RegNumber = "GH-3232",
                     GearUnitType = GearUnitType.Automatic,
                     Model = "RX",
@@ -63,8 +50,7 @@ namespace AutoRent.Migrations
                 };
                 context.Cars.Add(car);
                 context.SaveChanges();
-                car = new CarEntity
-                {
+                car = new CarEntity {
                     RegNumber = "HL-5544",
                     GearUnitType = GearUnitType.Manual,
                     Model = "XC90",
@@ -75,7 +61,7 @@ namespace AutoRent.Migrations
                 context.Cars.Add(car);
                 context.SaveChanges();
             }
-            
+
         }
     }
 }
