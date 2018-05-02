@@ -41,6 +41,7 @@ namespace AutoRent.Forms {
 
         private void EditCar_Click(object sender, EventArgs e) {
             DataGridViewSelectedRowCollection rows = CarGridView.SelectedRows;
+            if (rows.Count == 0) { return; }
             var car = (CarEntity)rows[0].DataBoundItem;
             var dlg = new EditCar(car);
             dlg.ShowDialog(this);
