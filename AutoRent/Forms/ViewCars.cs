@@ -15,7 +15,7 @@ namespace AutoRent.Forms {
         void RemoveCar_Click(object sender, EventArgs e) {
             DataGridViewSelectedRowCollection rows = CarGridView.SelectedRows;
             if (rows.Count == 0) { return; }
-            CarEntity car = (CarEntity)rows[0].DataBoundItem;
+            var car = (CarEntity)rows[0].DataBoundItem;
             DialogResult result = MessageBox.Show("Confirm deletion...", "Confirm Delete", MessageBoxButtons.YesNo);
             if (result == DialogResult.No) {
                 return;
@@ -38,7 +38,9 @@ namespace AutoRent.Forms {
         }
 
         private void EditCar_Click(object sender, EventArgs e) {
-            var dlg = new EditCar();
+            DataGridViewSelectedRowCollection rows = CarGridView.SelectedRows;
+            var car = (CarEntity)rows[0].DataBoundItem;
+            var dlg = new EditCar(car);
             dlg.ShowDialog(this);
         }
     }

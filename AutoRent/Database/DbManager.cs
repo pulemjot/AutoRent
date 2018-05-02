@@ -9,10 +9,10 @@ namespace AutoRent.Database {
     class DbManager {
         public bool VerifyCredentials(string userName, string password) {
             using (var ctx = new AppDbContext()) {
-                var pwd = String.Empty;
-                using (var halg = HashAlgorithm.Create("sha256")) {
-                    var hash = halg.ComputeHash(Encoding.Unicode.GetBytes(password));
-                    foreach (var b in hash) {
+                String pwd = String.Empty;
+                using (HashAlgorithm halg = HashAlgorithm.Create("sha256")) {
+                    Byte[] hash = halg.ComputeHash(Encoding.Unicode.GetBytes(password));
+                    foreach (Byte b in hash) {
                         pwd += $"{b:x2}";
                     }
                 }
@@ -42,7 +42,7 @@ namespace AutoRent.Database {
         }
         public void EditCar(CarEntity car) {
             using (var ctx = new AppDbContext()) {
-                var existingCar = ctx.Cars.First(x => x.ID == car.ID);
+                CarEntity existingCar = ctx.Cars.First(x => x.ID == car.ID);
                 existingCar.RegNumber = car.RegNumber;
                 existingCar.RentPricePerDay = car.RentPricePerDay;
                 ctx.SaveChanges();
@@ -50,7 +50,7 @@ namespace AutoRent.Database {
         }
         public void RemoveCar(CarEntity car) {
             using (var ctx = new AppDbContext()) {
-                var existingCar = ctx.Cars.First(x => x.ID == car.ID);
+                CarEntity existingCar = ctx.Cars.First(x => x.ID == car.ID);
                 ctx.Cars.Remove(existingCar);
                 ctx.SaveChanges();
             }
@@ -60,9 +60,9 @@ namespace AutoRent.Database {
 
         public IList<ClientEntity> GetClients() {
             using (var ctx = new AppDbContext()) {
-                var list = ctx.Clients
+                IQueryable<ClientEntity> list = ctx.Clients
                     .Include(x => x.Rents);
-                foreach (var item in list) {
+                foreach (ClientEntity item in list) {
                     item.ActiveRentCount = item.Rents.Count(x => x.LeaseEnded == null);
                 }
                 return list.ToList();
@@ -77,7 +77,7 @@ namespace AutoRent.Database {
         }
         public void EditClient(ClientEntity client) {
             using (var ctx = new AppDbContext()) {
-                var existingClient = ctx.Clients.First(x => x.ID == client.ID);
+                ClientEntity existingClient = ctx.Clients.First(x => x.ID == client.ID);
                 existingClient.FirstName = client.FirstName;
                 existingClient.LastName = client.LastName;
                 existingClient.PhoneNumber = client.PhoneNumber;
@@ -90,7 +90,7 @@ namespace AutoRent.Database {
         public void RentCar(CarRent carRent) {
             using (var ctx = new AppDbContext()) {
                 carRent.LeaseStarted = DateTime.Now;
-                var car = ctx.Cars.First(x => x.ID == carRent.CarID);
+                CarEntity car = ctx.Cars.First(x => x.ID == carRent.CarID);
                 car.ClientID = carRent.ClientID;
                 ctx.Rents.Add(carRent);
                 ctx.SaveChanges();
@@ -99,9 +99,9 @@ namespace AutoRent.Database {
 
         public void ReturnCar(int clientID, int carID) {
             using (var ctx = new AppDbContext()) {
-                var exisitngRent = ctx.Rents.First(x => x.ClientID == clientID && x.CarID == carID);
+                CarRent exisitngRent = ctx.Rents.First(x => x.ClientID == clientID && x.CarID == carID);
                 exisitngRent.LeaseEnded = DateTime.Now;
-                var car = ctx.Cars.First(x => x.ID == carID);
+                CarEntity car = ctx.Cars.First(x => x.ID == carID);
                 car.ClientID = null;
                 ctx.SaveChanges();
             }

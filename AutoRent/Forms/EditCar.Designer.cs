@@ -53,6 +53,7 @@ namespace AutoRent.Forms
             this.ButtonSave.TabIndex = 26;
             this.ButtonSave.Text = "Save";
             this.ButtonSave.UseVisualStyleBackColor = true;
+            this.ButtonSave.Click += new System.EventHandler(this.ButtonSave_Click);
             // 
             // GearUnitTypeBox
             // 
