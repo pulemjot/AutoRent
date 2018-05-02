@@ -41,6 +41,7 @@
             this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.activeRentCountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Clients = new System.Windows.Forms.BindingSource(this.components);
+            this.RefreshClientListButton = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ClientGridView)).BeginInit();
@@ -49,7 +50,7 @@
             // 
             // AddClient
             // 
-            this.AddClient.Location = new System.Drawing.Point(12, 22);
+            this.AddClient.Location = new System.Drawing.Point(93, 22);
             this.AddClient.Name = "AddClient";
             this.AddClient.Size = new System.Drawing.Size(75, 23);
             this.AddClient.TabIndex = 0;
@@ -59,7 +60,7 @@
             // 
             // EditClient
             // 
-            this.EditClient.Location = new System.Drawing.Point(99, 22);
+            this.EditClient.Location = new System.Drawing.Point(174, 22);
             this.EditClient.Name = "EditClient";
             this.EditClient.Size = new System.Drawing.Size(75, 23);
             this.EditClient.TabIndex = 1;
@@ -69,7 +70,7 @@
             // 
             // RentCar
             // 
-            this.RentCar.Location = new System.Drawing.Point(186, 22);
+            this.RentCar.Location = new System.Drawing.Point(280, 22);
             this.RentCar.Name = "RentCar";
             this.RentCar.Size = new System.Drawing.Size(75, 23);
             this.RentCar.TabIndex = 2;
@@ -78,7 +79,7 @@
             // 
             // ReturnCar
             // 
-            this.ReturnCar.Location = new System.Drawing.Point(273, 22);
+            this.ReturnCar.Location = new System.Drawing.Point(361, 22);
             this.ReturnCar.Name = "ReturnCar";
             this.ReturnCar.Size = new System.Drawing.Size(75, 23);
             this.ReturnCar.TabIndex = 3;
@@ -87,6 +88,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.RefreshClientListButton);
             this.panel1.Controls.Add(this.AddClient);
             this.panel1.Controls.Add(this.ReturnCar);
             this.panel1.Controls.Add(this.EditClient);
@@ -168,6 +170,16 @@
             // 
             this.Clients.DataSource = typeof(AutoRent.Database.ClientEntity);
             // 
+            // RefreshClientListButton
+            // 
+            this.RefreshClientListButton.Location = new System.Drawing.Point(12, 22);
+            this.RefreshClientListButton.Name = "RefreshClientListButton";
+            this.RefreshClientListButton.Size = new System.Drawing.Size(75, 23);
+            this.RefreshClientListButton.TabIndex = 4;
+            this.RefreshClientListButton.Text = "Refresh";
+            this.RefreshClientListButton.UseVisualStyleBackColor = true;
+            this.RefreshClientListButton.Click += new System.EventHandler(this.RefreshClientListButton_Click);
+            // 
             // ViewClients
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -202,5 +214,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn phoneNumberDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn activeRentCountDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button RefreshClientListButton;
     }
 }

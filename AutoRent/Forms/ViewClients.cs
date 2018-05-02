@@ -26,8 +26,16 @@ namespace AutoRent.Forms {
         }
 
         void EditClient_Click(object sender, EventArgs e) {
-            var dlg = new EditClient();
+            DataGridViewSelectedRowCollection rows = ClientGridView.SelectedRows;
+            if (rows.Count == 0) { return; }
+            var car = (ClientEntity)rows[0].DataBoundItem;
+            var dlg = new EditClient(car);
             dlg.ShowDialog(this);
+            refreshClientList();
+        }
+
+        private void RefreshClientListButton_Click(object sender, EventArgs e) {
+            refreshClientList();
         }
     }
 }
