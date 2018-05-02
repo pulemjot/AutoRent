@@ -12,7 +12,11 @@ namespace AutoRent.Forms {
 
 
         void refreshCarList() {
-            Cars.DataSource = _mgr.GetCars();
+            try {
+                Cars.DataSource = _mgr.GetCars();
+            } catch (Exception ex) {
+                MessageBox.Show(ex.Message, "Load Car List Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
         void RemoveCar_Click(object sender, EventArgs e) {
             DataGridViewSelectedRowCollection rows = CarGridView.SelectedRows;
