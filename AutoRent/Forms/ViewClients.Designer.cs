@@ -33,6 +33,7 @@
             this.RentCar = new System.Windows.Forms.Button();
             this.ReturnCar = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.RefreshClientListButton = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.ClientGridView = new System.Windows.Forms.DataGridView();
             this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -41,7 +42,6 @@
             this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.activeRentCountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Clients = new System.Windows.Forms.BindingSource(this.components);
-            this.RefreshClientListButton = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ClientGridView)).BeginInit();
@@ -76,6 +76,7 @@
             this.RentCar.TabIndex = 2;
             this.RentCar.Text = "Rent Car";
             this.RentCar.UseVisualStyleBackColor = true;
+            this.RentCar.Click += new System.EventHandler(this.RentCar_Click);
             // 
             // ReturnCar
             // 
@@ -98,6 +99,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(571, 63);
             this.panel1.TabIndex = 4;
+            // 
+            // RefreshClientListButton
+            // 
+            this.RefreshClientListButton.Location = new System.Drawing.Point(12, 22);
+            this.RefreshClientListButton.Name = "RefreshClientListButton";
+            this.RefreshClientListButton.Size = new System.Drawing.Size(75, 23);
+            this.RefreshClientListButton.TabIndex = 4;
+            this.RefreshClientListButton.Text = "Refresh";
+            this.RefreshClientListButton.UseVisualStyleBackColor = true;
+            this.RefreshClientListButton.Click += new System.EventHandler(this.RefreshClientListButton_Click);
             // 
             // panel2
             // 
@@ -169,16 +180,6 @@
             // Clients
             // 
             this.Clients.DataSource = typeof(AutoRent.Database.ClientEntity);
-            // 
-            // RefreshClientListButton
-            // 
-            this.RefreshClientListButton.Location = new System.Drawing.Point(12, 22);
-            this.RefreshClientListButton.Name = "RefreshClientListButton";
-            this.RefreshClientListButton.Size = new System.Drawing.Size(75, 23);
-            this.RefreshClientListButton.TabIndex = 4;
-            this.RefreshClientListButton.Text = "Refresh";
-            this.RefreshClientListButton.UseVisualStyleBackColor = true;
-            this.RefreshClientListButton.Click += new System.EventHandler(this.RefreshClientListButton_Click);
             // 
             // ViewClients
             // 

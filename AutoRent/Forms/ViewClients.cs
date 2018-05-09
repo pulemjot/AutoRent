@@ -37,5 +37,11 @@ namespace AutoRent.Forms {
         private void RefreshClientListButton_Click(object sender, EventArgs e) {
             refreshClientList();
         }
+
+        private void RentCar_Click(object sender, EventArgs e)
+        {
+            var dlg = new RentCar();
+            dlg.ShowDialog(this);
+        }
     }
 }
