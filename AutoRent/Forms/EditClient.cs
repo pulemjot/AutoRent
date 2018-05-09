@@ -6,7 +6,8 @@ using System.Windows.Forms;
 using AutoRent.Database;
 
 namespace AutoRent.Forms {
-    partial class EditClient : Form {
+    partial class EditClient : Form
+    {
         readonly DbManager _mgr = new DbManager();
         readonly ClientEntity _client;
 

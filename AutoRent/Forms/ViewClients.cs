@@ -40,8 +40,12 @@ namespace AutoRent.Forms {
 
         private void RentCar_Click(object sender, EventArgs e)
         {
-            var dlg = new RentCar();
+            DataGridViewSelectedRowCollection rows = ClientGridView.SelectedRows;
+            if (rows.Count == 0) { return; }
+            var client = (ClientEntity)rows[0].DataBoundItem;
+            var dlg = new RentCar(client);
             dlg.ShowDialog(this);
+            refreshClientList();
         }
     }
 }

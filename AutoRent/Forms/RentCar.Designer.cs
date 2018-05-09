@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.Address = new System.Windows.Forms.Label();
             this.Email = new System.Windows.Forms.Label();
             this.PhoneNumber = new System.Windows.Forms.Label();
@@ -40,7 +41,6 @@
             this.PersonalNumberBox = new System.Windows.Forms.TextBox();
             this.LastNameBox = new System.Windows.Forms.TextBox();
             this.FirstNameBox = new System.Windows.Forms.TextBox();
-            this.AvailableCarGridView = new System.Windows.Forms.DataGridView();
             this.AvailableCars = new System.Windows.Forms.Label();
             this.CountOfDays = new System.Windows.Forms.Label();
             this.CountOfDaysTextBox = new System.Windows.Forms.TextBox();
@@ -49,8 +49,17 @@
             this.ButtonRent = new System.Windows.Forms.Button();
             this.RentedCars = new System.Windows.Forms.Label();
             this.RentedCarGridView = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.AvailableCarGridView)).BeginInit();
+            this.AvailableCarGridView = new System.Windows.Forms.DataGridView();
+            this.vendorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.modelDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.regNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.yearDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gearUnitTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rentPricePerDayDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cars = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.RentedCarGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AvailableCarGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Cars)).BeginInit();
             this.SuspendLayout();
             // 
             // Address
@@ -157,14 +166,6 @@
             this.FirstNameBox.Size = new System.Drawing.Size(240, 20);
             this.FirstNameBox.TabIndex = 12;
             // 
-            // AvailableCarGridView
-            // 
-            this.AvailableCarGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.AvailableCarGridView.Location = new System.Drawing.Point(352, 25);
-            this.AvailableCarGridView.Name = "AvailableCarGridView";
-            this.AvailableCarGridView.Size = new System.Drawing.Size(240, 225);
-            this.AvailableCarGridView.TabIndex = 18;
-            // 
             // AvailableCars
             // 
             this.AvailableCars.AutoSize = true;
@@ -177,7 +178,7 @@
             // CountOfDays
             // 
             this.CountOfDays.AutoSize = true;
-            this.CountOfDays.Location = new System.Drawing.Point(598, 25);
+            this.CountOfDays.Location = new System.Drawing.Point(803, 25);
             this.CountOfDays.Name = "CountOfDays";
             this.CountOfDays.Size = new System.Drawing.Size(76, 13);
             this.CountOfDays.TabIndex = 20;
@@ -185,14 +186,14 @@
             // 
             // CountOfDaysTextBox
             // 
-            this.CountOfDaysTextBox.Location = new System.Drawing.Point(601, 42);
+            this.CountOfDaysTextBox.Location = new System.Drawing.Point(806, 42);
             this.CountOfDaysTextBox.Name = "CountOfDaysTextBox";
             this.CountOfDaysTextBox.Size = new System.Drawing.Size(73, 20);
             this.CountOfDaysTextBox.TabIndex = 21;
             // 
             // ButtonCalculate
             // 
-            this.ButtonCalculate.Location = new System.Drawing.Point(601, 68);
+            this.ButtonCalculate.Location = new System.Drawing.Point(806, 68);
             this.ButtonCalculate.Name = "ButtonCalculate";
             this.ButtonCalculate.Size = new System.Drawing.Size(73, 23);
             this.ButtonCalculate.TabIndex = 22;
@@ -202,7 +203,7 @@
             // PriceTextBox
             // 
             this.PriceTextBox.Enabled = false;
-            this.PriceTextBox.Location = new System.Drawing.Point(601, 97);
+            this.PriceTextBox.Location = new System.Drawing.Point(806, 97);
             this.PriceTextBox.Name = "PriceTextBox";
             this.PriceTextBox.Size = new System.Drawing.Size(73, 20);
             this.PriceTextBox.TabIndex = 23;
@@ -210,7 +211,7 @@
             // 
             // ButtonRent
             // 
-            this.ButtonRent.Location = new System.Drawing.Point(601, 227);
+            this.ButtonRent.Location = new System.Drawing.Point(806, 227);
             this.ButtonRent.Name = "ButtonRent";
             this.ButtonRent.Size = new System.Drawing.Size(73, 23);
             this.ButtonRent.TabIndex = 24;
@@ -220,7 +221,7 @@
             // RentedCars
             // 
             this.RentedCars.AutoSize = true;
-            this.RentedCars.Location = new System.Drawing.Point(680, 9);
+            this.RentedCars.Location = new System.Drawing.Point(882, 9);
             this.RentedCars.Name = "RentedCars";
             this.RentedCars.Size = new System.Drawing.Size(66, 13);
             this.RentedCars.TabIndex = 26;
@@ -229,16 +230,85 @@
             // RentedCarGridView
             // 
             this.RentedCarGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.RentedCarGridView.Location = new System.Drawing.Point(680, 25);
+            this.RentedCarGridView.Location = new System.Drawing.Point(885, 25);
             this.RentedCarGridView.Name = "RentedCarGridView";
-            this.RentedCarGridView.Size = new System.Drawing.Size(240, 225);
+            this.RentedCarGridView.Size = new System.Drawing.Size(350, 225);
             this.RentedCarGridView.TabIndex = 25;
+            // 
+            // AvailableCarGridView
+            // 
+            this.AvailableCarGridView.AllowUserToAddRows = false;
+            this.AvailableCarGridView.AllowUserToDeleteRows = false;
+            this.AvailableCarGridView.AllowUserToOrderColumns = true;
+            this.AvailableCarGridView.AutoGenerateColumns = false;
+            this.AvailableCarGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.AvailableCarGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.vendorDataGridViewTextBoxColumn,
+            this.modelDataGridViewTextBoxColumn,
+            this.regNumberDataGridViewTextBoxColumn,
+            this.yearDataGridViewTextBoxColumn,
+            this.gearUnitTypeDataGridViewTextBoxColumn,
+            this.rentPricePerDayDataGridViewTextBoxColumn});
+            this.AvailableCarGridView.DataSource = this.Cars;
+            this.AvailableCarGridView.Location = new System.Drawing.Point(352, 25);
+            this.AvailableCarGridView.MultiSelect = false;
+            this.AvailableCarGridView.Name = "AvailableCarGridView";
+            this.AvailableCarGridView.ReadOnly = true;
+            this.AvailableCarGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.AvailableCarGridView.Size = new System.Drawing.Size(445, 225);
+            this.AvailableCarGridView.TabIndex = 0;
+            // 
+            // vendorDataGridViewTextBoxColumn
+            // 
+            this.vendorDataGridViewTextBoxColumn.DataPropertyName = "Vendor";
+            this.vendorDataGridViewTextBoxColumn.HeaderText = "Vendor";
+            this.vendorDataGridViewTextBoxColumn.Name = "vendorDataGridViewTextBoxColumn";
+            this.vendorDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // modelDataGridViewTextBoxColumn
+            // 
+            this.modelDataGridViewTextBoxColumn.DataPropertyName = "Model";
+            this.modelDataGridViewTextBoxColumn.HeaderText = "Model";
+            this.modelDataGridViewTextBoxColumn.Name = "modelDataGridViewTextBoxColumn";
+            this.modelDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // regNumberDataGridViewTextBoxColumn
+            // 
+            this.regNumberDataGridViewTextBoxColumn.DataPropertyName = "RegNumber";
+            this.regNumberDataGridViewTextBoxColumn.HeaderText = "RegNumber";
+            this.regNumberDataGridViewTextBoxColumn.Name = "regNumberDataGridViewTextBoxColumn";
+            this.regNumberDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // yearDataGridViewTextBoxColumn
+            // 
+            this.yearDataGridViewTextBoxColumn.DataPropertyName = "Year";
+            this.yearDataGridViewTextBoxColumn.HeaderText = "Year";
+            this.yearDataGridViewTextBoxColumn.Name = "yearDataGridViewTextBoxColumn";
+            this.yearDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // gearUnitTypeDataGridViewTextBoxColumn
+            // 
+            this.gearUnitTypeDataGridViewTextBoxColumn.DataPropertyName = "GearUnitType";
+            this.gearUnitTypeDataGridViewTextBoxColumn.HeaderText = "GearUnitType";
+            this.gearUnitTypeDataGridViewTextBoxColumn.Name = "gearUnitTypeDataGridViewTextBoxColumn";
+            this.gearUnitTypeDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // rentPricePerDayDataGridViewTextBoxColumn
+            // 
+            this.rentPricePerDayDataGridViewTextBoxColumn.DataPropertyName = "RentPricePerDay";
+            this.rentPricePerDayDataGridViewTextBoxColumn.HeaderText = "RentPricePerDay";
+            this.rentPricePerDayDataGridViewTextBoxColumn.Name = "rentPricePerDayDataGridViewTextBoxColumn";
+            this.rentPricePerDayDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // Cars
+            // 
+            this.Cars.DataSource = typeof(AutoRent.Database.CarEntity);
             // 
             // RentCar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(929, 264);
+            this.ClientSize = new System.Drawing.Size(1247, 409);
             this.Controls.Add(this.RentedCars);
             this.Controls.Add(this.RentedCarGridView);
             this.Controls.Add(this.ButtonRent);
@@ -263,8 +333,9 @@
             this.Name = "RentCar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Rent Car";
-            ((System.ComponentModel.ISupportInitialize)(this.AvailableCarGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.RentedCarGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AvailableCarGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Cars)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -284,6 +355,7 @@
         private System.Windows.Forms.TextBox PersonalNumberBox;
         private System.Windows.Forms.TextBox LastNameBox;
         private System.Windows.Forms.TextBox FirstNameBox;
+        private System.Windows.Forms.BindingSource Cars;
         private System.Windows.Forms.DataGridView AvailableCarGridView;
         private System.Windows.Forms.Label AvailableCars;
         private System.Windows.Forms.Label CountOfDays;
@@ -293,5 +365,11 @@
         private System.Windows.Forms.Button ButtonRent;
         private System.Windows.Forms.Label RentedCars;
         private System.Windows.Forms.DataGridView RentedCarGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn vendorDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn modelDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn regNumberDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn yearDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn gearUnitTypeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn rentPricePerDayDataGridViewTextBoxColumn;
     }
 }
