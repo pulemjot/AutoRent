@@ -29,8 +29,8 @@ namespace AutoRent.Forms {
 
         void ButtonReturn_Click(Object sender, EventArgs e) {
             DataGridViewSelectedRowCollection rows = RentedCarGridView.SelectedRows;
-            if (rows.Count == 0 || rows[0] == null) { return; }
-            var car = (CarRentViewModel)rows[0].DataBoundItem;
+            if (rows.Count == 0 || !(rows[0].DataBoundItem is CarRentViewModel car)) { return; }
+
             Int32 diff = (DateTime.Now - car.LeaseEnded.Value).Days;
             if (diff > 0) {
                 MessageBox.Show($"Car lease expired. Penalty fee for {diff} days: {diff * car.RentPricePerDay} EUR", "Return Car", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);

@@ -62,7 +62,7 @@ namespace AutoRent.Database {
                 IQueryable<ClientEntity> list = ctx.Clients
                     .Include(x => x.Rents);
                 foreach (ClientEntity item in list) {
-                    item.ActiveRentCount = item.Rents.Count(x => x.LeaseEnded == null);
+                    item.ActiveRentCount = item.Rents.Count;
                 }
                 return list.ToList();
             }

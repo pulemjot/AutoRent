@@ -49,8 +49,7 @@ namespace AutoRent.Forms {
 
             try {
                 DataGridViewSelectedRowCollection rows = FreeCarGridView.SelectedRows;
-                if (rows.Count == 0 || countOfDays == 0) { return; }
-                var car = (CarEntity)rows[0].DataBoundItem;
+                if (rows.Count == 0 || countOfDays == 0 || !(rows[0].DataBoundItem is CarEntity car)) { return; }
 
                 var carRent = new CarRent {
                     CarID = car.ID,
