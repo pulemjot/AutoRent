@@ -98,7 +98,6 @@ namespace AutoRent.Database {
         }
         public void RentCar(CarRent carRent) {
             using (var ctx = new AppDbContext()) {
-                carRent.LeaseStarted = DateTime.Now;
                 CarEntity car = ctx.Cars.First(x => x.ID == carRent.CarID);
                 car.ClientID = carRent.ClientID;
                 ctx.Rents.Add(carRent);
