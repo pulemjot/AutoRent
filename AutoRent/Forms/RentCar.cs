@@ -1,15 +1,18 @@
 ﻿using System;
+using System.Linq;
 using System.Windows.Forms;
 using AutoRent.Database;
+using AutoRent.Models;
 
 namespace AutoRent.Forms {
     partial class RentCar : Form {
         readonly DbManager _mgr = new DbManager();
         readonly ClientEntity _client;
+
         public RentCar(ClientEntity client) {
             InitializeComponent();
+            _client = _mgr.GetClientWithRents(client.ID);
             refreshCarList();
-            _client = client;
             FirstNameBox.DataBindings.Add(nameof(TextBox.Text), _client, nameof(ClientEntity.FirstName));
             LastNameBox.DataBindings.Add(nameof(TextBox.Text), _client, nameof(ClientEntity.LastName));
             PersonalNumberBox.DataBindings.Add(nameof(TextBox.Text), _client, nameof(ClientEntity.PersonalNumber));
@@ -19,7 +22,8 @@ namespace AutoRent.Forms {
         }
         void refreshCarList() {
             try {
-                Cars.DataSource = _mgr.GetFreeCars();
+                AvailableCarList.DataSource = _mgr.GetFreeCars();
+                RentedCarList.DataSource = _client.Rents.Select(x => new CarRentViewModel(x));
             } catch (Exception ex) {
                 MessageBox.Show(ex.Message, "Load Car List Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }

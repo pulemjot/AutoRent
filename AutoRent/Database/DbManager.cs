@@ -22,13 +22,11 @@ namespace AutoRent.Database {
         }
 
         #region cars
-
         public IList<CarEntity> GetCars() {
             using (var ctx = new AppDbContext()) {
                 return ctx.Cars.ToList();
             }
         }
-
         public IList<CarEntity> GetFreeCars() {
             using (var ctx = new AppDbContext()) {
                 return ctx.Cars.Where(x => x.CurrentClient == null).ToList();
@@ -55,9 +53,10 @@ namespace AutoRent.Database {
                 ctx.SaveChanges();
             }
         }
-
         #endregion
 
+
+        #region clients
         public IList<ClientEntity> GetClients() {
             using (var ctx = new AppDbContext()) {
                 IQueryable<ClientEntity> list = ctx.Clients
@@ -68,7 +67,6 @@ namespace AutoRent.Database {
                 return list.ToList();
             }
         }
-
         public void AddClient(ClientEntity client) {
             using (var ctx = new AppDbContext()) {
                 ctx.Clients.Add(client);
@@ -86,7 +84,18 @@ namespace AutoRent.Database {
                 ctx.SaveChanges();
             }
         }
+        #endregion
 
+
+        #region Rent/Return
+        public ClientEntity GetClientWithRents(Int32 clientID) {
+            using (var ctx = new AppDbContext()) {
+                return ctx.Clients
+                    .Include(x => x.Rents)
+                    .Include("Rents.Car")
+                    .First(x => x.ID == clientID);
+            }
+        }
         public void RentCar(CarRent carRent) {
             using (var ctx = new AppDbContext()) {
                 carRent.LeaseStarted = DateTime.Now;
@@ -96,7 +105,6 @@ namespace AutoRent.Database {
                 ctx.SaveChanges();
             }
         }
-
         public void ReturnCar(int clientID, int carID) {
             using (var ctx = new AppDbContext()) {
                 CarRent exisitngRent = ctx.Rents.First(x => x.ClientID == clientID && x.CarID == carID);
@@ -106,5 +114,7 @@ namespace AutoRent.Database {
                 ctx.SaveChanges();
             }
         }
+
+        #endregion
     }
 }
