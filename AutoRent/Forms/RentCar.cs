@@ -25,7 +25,7 @@ namespace AutoRent.Forms {
             try {
                 AvailableCarList.DataSource = _mgr.GetFreeCars();
                 RentedCarList.DataSource = _mgr.GetClientWithRents(_client.ID).Rents.Select(x => new CarRentViewModel(x));
-                if (_client.Rents.Count < 5) {
+                if (RentedCarList.Count < 5) {
                     RentButton.Enabled = true;
                 }
             } catch (Exception ex) {
