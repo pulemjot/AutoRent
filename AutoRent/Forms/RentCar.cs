@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 using System.Linq;
 using System.Windows.Forms;
 using AutoRent.Database;
@@ -45,11 +46,25 @@ namespace AutoRent.Forms {
             PriceBox.Text = car.RentPricePerDay * Convert.ToInt32(CountOfDaysBox.Text) + " EUR";
         }
 
-        void OnRentButtonClick(object sender, EventArgs e) {
+        void OnRentButtonClick(object sender, EventArgs e)
+        {
+            int countOfDays;
+            int.TryParse(CountOfDaysBox.Text, NumberStyles.Any, null, out countOfDays);
+
             DataGridViewSelectedRowCollection rows = FreeCarGridView.SelectedRows;
-            if (rows.Count == 0) { return; }
+            if (rows.Count == 0 || countOfDays == 0)
+            { return; }
             var car = (CarEntity)rows[0].DataBoundItem;
 
+            var carRent = new CarRent
+            {
+                CarID = car.ID,
+                ClientID = _client.ID,
+                LeaseStarted = DateTime.Now,
+                LeaseEnded = DateTime.Now.AddDays(Convert.ToInt32(CountOfDaysBox.Text))
+            };
         }
+
+
     }
 }
