@@ -29,7 +29,7 @@ namespace AutoRent.Forms {
 
         void ButtonReturn_Click(Object sender, EventArgs e) {
             DataGridViewSelectedRowCollection rows = RentedCarGridView.SelectedRows;
-            if (rows.Count == 0) { return; }
+            if (rows.Count == 0 || rows[0] == null) { return; }
             var car = (CarRentViewModel)rows[0].DataBoundItem;
             Int32 diff = (DateTime.Now - car.LeaseEnded.Value).Days;
             if (diff > 0) {
