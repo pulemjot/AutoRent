@@ -12,8 +12,8 @@ namespace AutoRent.Forms {
 
         public RentCar(ClientEntity client) {
             InitializeComponent();
-            _client = _mgr.GetClientWithRents(client.ID);
-            refreshCarList();
+            _client = client;
+            refreshLists();
             FirstNameBox.DataBindings.Add(nameof(TextBox.Text), _client, nameof(ClientEntity.FirstName));
             LastNameBox.DataBindings.Add(nameof(TextBox.Text), _client, nameof(ClientEntity.LastName));
             PersonalNumberBox.DataBindings.Add(nameof(TextBox.Text), _client, nameof(ClientEntity.PersonalNumber));
@@ -21,10 +21,10 @@ namespace AutoRent.Forms {
             EmailBox.DataBindings.Add(nameof(TextBox.Text), _client, nameof(ClientEntity.Email));
             AddressBox.DataBindings.Add(nameof(TextBox.Text), _client, nameof(ClientEntity.Address));
         }
-        void refreshCarList() {
+        void refreshLists() {
             try {
                 AvailableCarList.DataSource = _mgr.GetFreeCars();
-                RentedCarList.DataSource = _client.Rents.Select(x => new CarRentViewModel(x));
+                RentedCarList.DataSource = _mgr.GetClientWithRents(_client.ID).Rents.Select(x => new CarRentViewModel(x));
                 if (_client.Rents.Count < 5) {
                     RentButton.Enabled = true;
                 }
@@ -51,18 +51,27 @@ namespace AutoRent.Forms {
             int countOfDays;
             int.TryParse(CountOfDaysBox.Text, NumberStyles.Any, null, out countOfDays);
 
-            DataGridViewSelectedRowCollection rows = FreeCarGridView.SelectedRows;
-            if (rows.Count == 0 || countOfDays == 0)
-            { return; }
-            var car = (CarEntity)rows[0].DataBoundItem;
+            try {
+                DataGridViewSelectedRowCollection rows = FreeCarGridView.SelectedRows;
+                if (rows.Count == 0 || countOfDays == 0)
+                { return; }
+                var car = (CarEntity)rows[0].DataBoundItem;
 
-            var carRent = new CarRent
-            {
-                CarID = car.ID,
-                ClientID = _client.ID,
-                LeaseStarted = DateTime.Now,
-                LeaseEnded = DateTime.Now.AddDays(Convert.ToInt32(CountOfDaysBox.Text))
-            };
+                var carRent = new CarRent
+                              {
+                                  CarID = car.ID,
+                                  ClientID = _client.ID,
+                                  LeaseStarted = DateTime.Now,
+                                  LeaseEnded = DateTime.Now.AddDays(Convert.ToInt32(CountOfDaysBox.Text))
+                              };
+                _mgr.RentCar(carRent);
+                refreshLists();
+            }
+            catch (Exception Exception) {
+                Console.WriteLine(Exception);
+                throw;
+            }
+            
         }
 
 
