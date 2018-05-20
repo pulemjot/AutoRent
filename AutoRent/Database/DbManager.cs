@@ -55,18 +55,15 @@ namespace AutoRent.Database {
             }
         }
         public void RemoveCar(CarEntity car) {
-            using (var ctx = new AppDbContext()) {
-                if (car.ClientID != null)
-                {
-                    CarEntity existingCar = ctx.Cars.First(x => x.ID == car.ID);
-                ctx.Cars.Remove(existingCar);
-                ctx.SaveChanges();
-                }
-                else
+            using (var ctx = new AppDbContext())
+            {
+                if (car.ClientID == null)
                 {
                     throw new Exception("Car is rented!");
                 }
-                
+                CarEntity existingCar = ctx.Cars.First(x => x.ID == car.ID);
+                ctx.Cars.Remove(existingCar);
+                ctx.SaveChanges();
             }
         }
         #endregion

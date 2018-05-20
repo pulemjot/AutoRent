@@ -9,10 +9,6 @@ namespace AutoRent.Database
 {
     class AppDbContext : DbContext
     {
-        public AppDbContext() : base(("Server=hq-s-sql.sysadmins.lv;Database=Autorent;User Id=srpuser; Password=P@ssw0rd"))
-        {
-            
-        }
         public DbSet<ClientEntity> Clients { get; set; }
         public DbSet<CarEntity> Cars { get; set; }
         public DbSet<CarRent> Rents { get; set; }

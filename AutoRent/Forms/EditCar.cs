@@ -21,23 +21,39 @@ namespace AutoRent.Forms {
             RentPricePerDayBox.DataBindings.Add(nameof(TextBox.Text), _car, nameof(CarEntity.RentPricePerDay));
         }
 
-        void ButtonSave_Click(Object sender, EventArgs e) {
-            var ctx = new ValidationContext(_car);
-            IList<ValidationResult> errors = new List<ValidationResult>();
-            var sb = new StringBuilder();
-            if (!Validator.TryValidateObject(_car, ctx, errors, true)) {
-                foreach (ValidationResult result in errors) {
-                    sb.AppendLine(result.ErrorMessage);
-                }
-                MessageBox.Show(sb.ToString(), "Form Validation", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        void ButtonSave_Click(Object sender, EventArgs e)
+        {
+            if (!ValidateForm())
+            {
                 return;
             }
+
             try {
                 _mgr.EditCar(_car);
                 Close();
             } catch (Exception ex) {
                 MessageBox.Show(ex.Message, "Save car error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private bool ValidateForm()
+        {
+            var ctx = new ValidationContext(_car);
+            IList<ValidationResult> errors = new List<ValidationResult>();
+            var sb = new StringBuilder();
+            if (Validator.TryValidateObject(_car, ctx, errors, true))
+            {
+                return true;
+            }
+
+            foreach (ValidationResult result in errors)
+            {
+                sb.AppendLine(result.ErrorMessage);
+            }
+
+            MessageBox.Show(sb.ToString(), "Form Validation", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            return false;
+
         }
     }
 }

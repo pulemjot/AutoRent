@@ -7,10 +7,10 @@ namespace AutoRent.Forms {
         readonly DbManager _mgr = new DbManager();
         public ViewClients() {
             InitializeComponent();
-            refreshClientList();
+            RefreshClientTable();
         }
 
-        void refreshClientList() {
+        void RefreshClientTable() {
             try {
                 Clients.DataSource = _mgr.GetClients();
             } catch (Exception ex) {
@@ -21,7 +21,7 @@ namespace AutoRent.Forms {
             var dlg = new AddClient();
             dlg.ShowDialog(this);
             if (dlg.AddedClient != null) {
-                Clients.Add(dlg.AddedClient);
+                RefreshClientTable();
             }
         }
 
@@ -31,11 +31,11 @@ namespace AutoRent.Forms {
             var car = (ClientEntity)rows[0].DataBoundItem;
             var dlg = new EditClient(car);
             dlg.ShowDialog(this);
-            refreshClientList();
+            RefreshClientTable();
         }
 
         private void RefreshClientListButton_Click(Object sender, EventArgs e) {
-            refreshClientList();
+            RefreshClientTable();
         }
 
         private void RentCar_Click(Object sender, EventArgs e)
@@ -45,7 +45,7 @@ namespace AutoRent.Forms {
             var client = (ClientEntity)rows[0].DataBoundItem;
             var dlg = new RentCar(client);
             dlg.ShowDialog(this);
-            refreshClientList();
+            RefreshClientTable();
         }
 
         private void ReturnCar_Click(Object sender, EventArgs e) {
@@ -54,7 +54,7 @@ namespace AutoRent.Forms {
             var client = (ClientEntity)rows[0].DataBoundItem;
             var dlg = new ReturnCar(client);
             dlg.ShowDialog(this);
-            refreshClientList();
+            RefreshClientTable();
         }
     }
 }

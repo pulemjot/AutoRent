@@ -7,11 +7,11 @@ namespace AutoRent.Forms {
         readonly DbManager _mgr = new DbManager();
         public ViewCars() {
             InitializeComponent();
-            refreshCarList();
+            RefreshCarTable();
         }
 
 
-        void refreshCarList() {
+        void RefreshCarTable() {
             try {
                 Cars.DataSource = _mgr.GetCars();
             } catch (Exception ex) {
@@ -29,7 +29,7 @@ namespace AutoRent.Forms {
 
             try {
                 _mgr.RemoveCar(car);
-                Cars.Remove(car);
+                RefreshCarTable();
             } catch (Exception ex) {
                 MessageBox.Show(ex.Message, "Remove Car Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -39,7 +39,7 @@ namespace AutoRent.Forms {
             var dlg = new AddCar();
             dlg.ShowDialog(this);
             if (dlg.AddedCar != null) {
-                Cars.Add(dlg.AddedCar);
+                RefreshCarTable();
             }
         }
 
@@ -49,11 +49,11 @@ namespace AutoRent.Forms {
             var car = (CarEntity)rows[0].DataBoundItem;
             var dlg = new EditCar(car);
             dlg.ShowDialog(this);
-            refreshCarList();
+            RefreshCarTable();
         }
 
         void RefreshCarListButton_Click(Object sender, EventArgs e) {
-            refreshCarList();
+            RefreshCarTable();
         }
     }
 }

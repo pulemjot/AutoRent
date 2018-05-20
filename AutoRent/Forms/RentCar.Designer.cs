@@ -440,7 +440,7 @@
             this.RentButton.TabIndex = 24;
             this.RentButton.Text = "Rent";
             this.RentButton.UseVisualStyleBackColor = true;
-            this.RentButton.Click += new System.EventHandler(this.OnRentButtonClick);
+            this.RentButton.Click += new System.EventHandler(this.RentCarButton_Click);
             // 
             // RentedCarsGridView
             // 
