@@ -18,7 +18,7 @@ namespace AutoRent.Forms {
             }
         }
         void AddClient_Click(Object sender, EventArgs e) {
-            var dlg = new AddNewClient();
+            var dlg = new AddClient();
             dlg.ShowDialog(this);
             if (dlg.AddedClient != null) {
                 Clients.Add(dlg.AddedClient);

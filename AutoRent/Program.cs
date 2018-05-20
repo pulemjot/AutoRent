@@ -11,9 +11,18 @@ namespace AutoRent {
         /// </summary>
         [STAThread]
         static void Main() {
-            var configuration = new Configuration();
-            var dbMigrator = new DbMigrator(configuration);
-            dbMigrator.Update();
+            try
+            {
+                var configuration = new Configuration();
+                var dbMigrator = new DbMigrator(configuration);
+                dbMigrator.Update();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message, "Database Access", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Authorization());

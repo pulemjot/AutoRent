@@ -6,10 +6,10 @@ using System.Windows.Forms;
 using AutoRent.Database;
 
 namespace AutoRent.Forms {
-    partial class AddNewClient : Form {
+    partial class AddClient : Form {
         readonly DbManager _mgr = new DbManager();
         readonly ClientEntity _client = new ClientEntity();
-        public AddNewClient() {
+        public AddClient() {
             InitializeComponent();
             FirstNameBox.DataBindings.Add(nameof(TextBox.Text), _client, nameof(ClientEntity.FirstName));
             LastNameBox.DataBindings.Add(nameof(TextBox.Text), _client, nameof(ClientEntity.LastName));

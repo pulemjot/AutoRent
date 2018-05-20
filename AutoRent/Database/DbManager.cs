@@ -34,12 +34,20 @@ namespace AutoRent.Database {
         }
         public void AddCar(CarEntity car) {
             using (var ctx = new AppDbContext()) {
+                if (ctx.Cars.Any(x => x.RegNumber == car.RegNumber))
+                {
+                    throw new Exception("Car with such registration number exists!");
+                }
                 ctx.Cars.Add(car);
                 ctx.SaveChanges();
             }
         }
         public void EditCar(CarEntity car) {
             using (var ctx = new AppDbContext()) {
+                if (ctx.Cars.Any(x => x.RegNumber == car.RegNumber))
+                {
+                    throw new Exception("Car with such registration number exists!");
+                }
                 CarEntity existingCar = ctx.Cars.First(x => x.ID == car.ID);
                 existingCar.RegNumber = car.RegNumber;
                 existingCar.RentPricePerDay = car.RentPricePerDay;
@@ -48,9 +56,17 @@ namespace AutoRent.Database {
         }
         public void RemoveCar(CarEntity car) {
             using (var ctx = new AppDbContext()) {
-                CarEntity existingCar = ctx.Cars.First(x => x.ID == car.ID);
+                if (car.ClientID != null)
+                {
+                    CarEntity existingCar = ctx.Cars.First(x => x.ID == car.ID);
                 ctx.Cars.Remove(existingCar);
                 ctx.SaveChanges();
+                }
+                else
+                {
+                    throw new Exception("Car is rented!");
+                }
+                
             }
         }
         #endregion
@@ -69,6 +85,10 @@ namespace AutoRent.Database {
         }
         public void AddClient(ClientEntity client) {
             using (var ctx = new AppDbContext()) {
+                if (ctx.Clients.Any(x => x.PersonalNumber == client.PersonalNumber))
+                {
+                    throw new Exception("Client with such personal number exists!");
+                }
                 ctx.Clients.Add(client);
                 ctx.SaveChanges();
             }

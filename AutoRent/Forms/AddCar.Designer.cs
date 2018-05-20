@@ -1,5 +1,5 @@
 ﻿namespace AutoRent.Forms {
-    partial class AddNewCar {
+    partial class AddCar {
         /// <summary>
         /// Required designer variable.
         /// </summary>
@@ -154,7 +154,7 @@
             // 
             this.carEntityBindingSource.DataSource = typeof(AutoRent.Database.CarEntity);
             // 
-            // AddNewCar
+            // AddCar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -175,9 +175,9 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "AddNewCar";
+            this.Name = "AddCar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "AddNewCar";
+            this.Text = "Add Car";
             ((System.ComponentModel.ISupportInitialize)(this.carEntityBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

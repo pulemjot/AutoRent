@@ -36,6 +36,7 @@
             this.RefreshClientListButton = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.ClientGridView = new System.Windows.Forms.DataGridView();
+            this.PersonalNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.phoneNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -128,6 +129,7 @@
             this.ClientGridView.AutoGenerateColumns = false;
             this.ClientGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ClientGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.PersonalNumber,
             this.firstNameDataGridViewTextBoxColumn,
             this.lastNameDataGridViewTextBoxColumn,
             this.phoneNumberDataGridViewTextBoxColumn,
@@ -142,6 +144,13 @@
             this.ClientGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.ClientGridView.Size = new System.Drawing.Size(571, 227);
             this.ClientGridView.TabIndex = 0;
+            // 
+            // PersonalNumber
+            // 
+            this.PersonalNumber.DataPropertyName = "PersonalNumber";
+            this.PersonalNumber.HeaderText = "PersonalNumber";
+            this.PersonalNumber.Name = "PersonalNumber";
+            this.PersonalNumber.ReadOnly = true;
             // 
             // firstNameDataGridViewTextBoxColumn
             // 
@@ -192,7 +201,7 @@
             this.MinimizeBox = false;
             this.Name = "ViewClients";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ViewClients";
+            this.Text = "View Clients";
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ClientGridView)).EndInit();
@@ -211,11 +220,12 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.DataGridView ClientGridView;
         private System.Windows.Forms.BindingSource Clients;
+        private System.Windows.Forms.Button RefreshClientListButton;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PersonalNumber;
         private System.Windows.Forms.DataGridViewTextBoxColumn firstNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn lastNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn phoneNumberDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn activeRentCountDataGridViewTextBoxColumn;
-        private System.Windows.Forms.Button RefreshClientListButton;
     }
 }

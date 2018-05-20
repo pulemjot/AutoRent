@@ -2,7 +2,7 @@
 
 namespace AutoRent.Forms
 {
-    partial class AddNewClient
+    partial class AddClient
     {
         /// <summary>
         /// Required designer variable.
@@ -153,7 +153,7 @@ namespace AutoRent.Forms
             this.ButtonSave.UseVisualStyleBackColor = true;
             this.ButtonSave.Click += new System.EventHandler(this.ButtonSave_Click);
             // 
-            // AddNewClient
+            // AddClient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -174,9 +174,9 @@ namespace AutoRent.Forms
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "AddNewClient";
+            this.Name = "AddClient";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Add New Client";
+            this.Text = "Add Client";
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -6,11 +6,11 @@ using System.Windows.Forms;
 using AutoRent.Database;
 
 namespace AutoRent.Forms {
-    partial class AddNewCar : Form {
+    partial class AddCar : Form {
         readonly DbManager _mgr = new DbManager();
         readonly CarEntity _car = new CarEntity { Year = 2000 };
 
-        public AddNewCar() {
+        public AddCar() {
             InitializeComponent();
             GearUnitTypeBox.DataSource = Enum.GetValues(typeof(GearUnitType));
             GearUnitTypeBox.DataBindings.Add(nameof(ComboBox.SelectedItem), _car, nameof(CarEntity.GearUnitType));

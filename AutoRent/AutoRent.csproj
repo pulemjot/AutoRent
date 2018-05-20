@@ -59,17 +59,17 @@
     <Compile Include="Database\DbManager.cs" />
     <Compile Include="Database\GearUnitType.cs" />
     <Compile Include="Database\Operator.cs" />
-    <Compile Include="Forms\AddNewCar.cs">
+    <Compile Include="Forms\AddCar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\AddNewCar.Designer.cs">
-      <DependentUpon>AddNewCar.cs</DependentUpon>
+    <Compile Include="Forms\AddCar.Designer.cs">
+      <DependentUpon>AddCar.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\AddNewClient.cs">
+    <Compile Include="Forms\AddClient.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\AddNewClient.Designer.cs">
-      <DependentUpon>AddNewClient.cs</DependentUpon>
+    <Compile Include="Forms\AddClient.Designer.cs">
+      <DependentUpon>AddClient.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Authorization.cs">
       <SubType>Form</SubType>
@@ -129,11 +129,11 @@
     <Compile Include="Models\ViewModelBase.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Forms\AddNewCar.resx">
-      <DependentUpon>AddNewCar.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\AddCar.resx">
+      <DependentUpon>AddCar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\AddNewClient.resx">
-      <DependentUpon>AddNewClient.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\AddClient.resx">
+      <DependentUpon>AddClient.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Authorization.resx">
       <DependentUpon>Authorization.cs</DependentUpon>
