@@ -40,11 +40,6 @@
             this.AvailableCarGridView = new System.Windows.Forms.DataGridView();
             this.vendorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.modelDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.regNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.yearDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gearUnitTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rentPricePerDayDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cars = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -69,12 +64,26 @@
             this.PhoneNumberBox = new System.Windows.Forms.TextBox();
             this.AddressBox = new System.Windows.Forms.TextBox();
             this.EmailBox = new System.Windows.Forms.TextBox();
+            this.regNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.yearDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gearUnitTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rentPricePerDayDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cars = new System.Windows.Forms.BindingSource(this.components);
+            this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.regNumberDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vendorDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.modelDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.yearDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gearUnitTypeDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rentPricePerDayDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clientIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.currentClientDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.RentedCarGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.AvailableCarGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Cars)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Cars)).BeginInit();
             this.SuspendLayout();
             // 
             // AvailableCars
@@ -183,47 +192,26 @@
             this.modelDataGridViewTextBoxColumn.Name = "modelDataGridViewTextBoxColumn";
             this.modelDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // regNumberDataGridViewTextBoxColumn
-            // 
-            this.regNumberDataGridViewTextBoxColumn.DataPropertyName = "RegNumber";
-            this.regNumberDataGridViewTextBoxColumn.HeaderText = "RegNumber";
-            this.regNumberDataGridViewTextBoxColumn.Name = "regNumberDataGridViewTextBoxColumn";
-            this.regNumberDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // yearDataGridViewTextBoxColumn
-            // 
-            this.yearDataGridViewTextBoxColumn.DataPropertyName = "Year";
-            this.yearDataGridViewTextBoxColumn.HeaderText = "Year";
-            this.yearDataGridViewTextBoxColumn.Name = "yearDataGridViewTextBoxColumn";
-            this.yearDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // gearUnitTypeDataGridViewTextBoxColumn
-            // 
-            this.gearUnitTypeDataGridViewTextBoxColumn.DataPropertyName = "GearUnitType";
-            this.gearUnitTypeDataGridViewTextBoxColumn.HeaderText = "GearUnitType";
-            this.gearUnitTypeDataGridViewTextBoxColumn.Name = "gearUnitTypeDataGridViewTextBoxColumn";
-            this.gearUnitTypeDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // rentPricePerDayDataGridViewTextBoxColumn
-            // 
-            this.rentPricePerDayDataGridViewTextBoxColumn.DataPropertyName = "RentPricePerDay";
-            this.rentPricePerDayDataGridViewTextBoxColumn.HeaderText = "RentPricePerDay";
-            this.rentPricePerDayDataGridViewTextBoxColumn.Name = "rentPricePerDayDataGridViewTextBoxColumn";
-            this.rentPricePerDayDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // Cars
-            // 
-            this.Cars.DataSource = typeof(AutoRent.Database.CarEntity);
-            // 
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AllowUserToOrderColumns = true;
+            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2});
+            this.dataGridViewTextBoxColumn2,
+            this.iDDataGridViewTextBoxColumn,
+            this.regNumberDataGridViewTextBoxColumn1,
+            this.vendorDataGridViewTextBoxColumn1,
+            this.modelDataGridViewTextBoxColumn1,
+            this.yearDataGridViewTextBoxColumn1,
+            this.gearUnitTypeDataGridViewTextBoxColumn1,
+            this.rentPricePerDayDataGridViewTextBoxColumn1,
+            this.clientIDDataGridViewTextBoxColumn,
+            this.currentClientDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.Cars;
             this.dataGridView1.Location = new System.Drawing.Point(15, 313);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
@@ -440,6 +428,101 @@
             this.EmailBox.Size = new System.Drawing.Size(319, 20);
             this.EmailBox.TabIndex = 16;
             // 
+            // regNumberDataGridViewTextBoxColumn
+            // 
+            this.regNumberDataGridViewTextBoxColumn.DataPropertyName = "RegNumber";
+            this.regNumberDataGridViewTextBoxColumn.HeaderText = "RegNumber";
+            this.regNumberDataGridViewTextBoxColumn.Name = "regNumberDataGridViewTextBoxColumn";
+            this.regNumberDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // yearDataGridViewTextBoxColumn
+            // 
+            this.yearDataGridViewTextBoxColumn.DataPropertyName = "Year";
+            this.yearDataGridViewTextBoxColumn.HeaderText = "Year";
+            this.yearDataGridViewTextBoxColumn.Name = "yearDataGridViewTextBoxColumn";
+            this.yearDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // gearUnitTypeDataGridViewTextBoxColumn
+            // 
+            this.gearUnitTypeDataGridViewTextBoxColumn.DataPropertyName = "GearUnitType";
+            this.gearUnitTypeDataGridViewTextBoxColumn.HeaderText = "GearUnitType";
+            this.gearUnitTypeDataGridViewTextBoxColumn.Name = "gearUnitTypeDataGridViewTextBoxColumn";
+            this.gearUnitTypeDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // rentPricePerDayDataGridViewTextBoxColumn
+            // 
+            this.rentPricePerDayDataGridViewTextBoxColumn.DataPropertyName = "RentPricePerDay";
+            this.rentPricePerDayDataGridViewTextBoxColumn.HeaderText = "RentPricePerDay";
+            this.rentPricePerDayDataGridViewTextBoxColumn.Name = "rentPricePerDayDataGridViewTextBoxColumn";
+            this.rentPricePerDayDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // Cars
+            // 
+            this.Cars.DataSource = typeof(AutoRent.Database.CarEntity);
+            // 
+            // iDDataGridViewTextBoxColumn
+            // 
+            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
+            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
+            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
+            this.iDDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // regNumberDataGridViewTextBoxColumn1
+            // 
+            this.regNumberDataGridViewTextBoxColumn1.DataPropertyName = "RegNumber";
+            this.regNumberDataGridViewTextBoxColumn1.HeaderText = "RegNumber";
+            this.regNumberDataGridViewTextBoxColumn1.Name = "regNumberDataGridViewTextBoxColumn1";
+            this.regNumberDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // vendorDataGridViewTextBoxColumn1
+            // 
+            this.vendorDataGridViewTextBoxColumn1.DataPropertyName = "Vendor";
+            this.vendorDataGridViewTextBoxColumn1.HeaderText = "Vendor";
+            this.vendorDataGridViewTextBoxColumn1.Name = "vendorDataGridViewTextBoxColumn1";
+            this.vendorDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // modelDataGridViewTextBoxColumn1
+            // 
+            this.modelDataGridViewTextBoxColumn1.DataPropertyName = "Model";
+            this.modelDataGridViewTextBoxColumn1.HeaderText = "Model";
+            this.modelDataGridViewTextBoxColumn1.Name = "modelDataGridViewTextBoxColumn1";
+            this.modelDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // yearDataGridViewTextBoxColumn1
+            // 
+            this.yearDataGridViewTextBoxColumn1.DataPropertyName = "Year";
+            this.yearDataGridViewTextBoxColumn1.HeaderText = "Year";
+            this.yearDataGridViewTextBoxColumn1.Name = "yearDataGridViewTextBoxColumn1";
+            this.yearDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // gearUnitTypeDataGridViewTextBoxColumn1
+            // 
+            this.gearUnitTypeDataGridViewTextBoxColumn1.DataPropertyName = "GearUnitType";
+            this.gearUnitTypeDataGridViewTextBoxColumn1.HeaderText = "GearUnitType";
+            this.gearUnitTypeDataGridViewTextBoxColumn1.Name = "gearUnitTypeDataGridViewTextBoxColumn1";
+            this.gearUnitTypeDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // rentPricePerDayDataGridViewTextBoxColumn1
+            // 
+            this.rentPricePerDayDataGridViewTextBoxColumn1.DataPropertyName = "RentPricePerDay";
+            this.rentPricePerDayDataGridViewTextBoxColumn1.HeaderText = "RentPricePerDay";
+            this.rentPricePerDayDataGridViewTextBoxColumn1.Name = "rentPricePerDayDataGridViewTextBoxColumn1";
+            this.rentPricePerDayDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // clientIDDataGridViewTextBoxColumn
+            // 
+            this.clientIDDataGridViewTextBoxColumn.DataPropertyName = "ClientID";
+            this.clientIDDataGridViewTextBoxColumn.HeaderText = "ClientID";
+            this.clientIDDataGridViewTextBoxColumn.Name = "clientIDDataGridViewTextBoxColumn";
+            this.clientIDDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // currentClientDataGridViewTextBoxColumn
+            // 
+            this.currentClientDataGridViewTextBoxColumn.DataPropertyName = "CurrentClient";
+            this.currentClientDataGridViewTextBoxColumn.HeaderText = "CurrentClient";
+            this.currentClientDataGridViewTextBoxColumn.Name = "currentClientDataGridViewTextBoxColumn";
+            this.currentClientDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
             // RentCar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -469,11 +552,11 @@
             this.Text = "Rent Car";
             ((System.ComponentModel.ISupportInitialize)(this.RentedCarGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.AvailableCarGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Cars)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Cars)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -520,5 +603,14 @@
         private System.Windows.Forms.TextBox PhoneNumberBox;
         private System.Windows.Forms.TextBox AddressBox;
         private System.Windows.Forms.TextBox EmailBox;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn regNumberDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn vendorDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn modelDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn yearDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn gearUnitTypeDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn rentPricePerDayDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clientIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn currentClientDataGridViewTextBoxColumn;
     }
 }
