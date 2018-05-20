@@ -86,6 +86,7 @@
             this.ReturnCar.TabIndex = 3;
             this.ReturnCar.Text = "Return Car";
             this.ReturnCar.UseVisualStyleBackColor = true;
+            this.ReturnCar.Click += new System.EventHandler(this.ReturnCar_Click);
             // 
             // panel1
             // 

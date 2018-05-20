@@ -47,5 +47,14 @@ namespace AutoRent.Forms {
             dlg.ShowDialog(this);
             refreshClientList();
         }
+
+        private void ReturnCar_Click(object sender, EventArgs e) {
+            DataGridViewSelectedRowCollection rows = ClientGridView.SelectedRows;
+            if (rows.Count == 0) { return; }
+            var client = (ClientEntity)rows[0].DataBoundItem;
+            var dlg = new ReturnCar(client);
+            dlg.ShowDialog(this);
+            refreshClientList();
+        }
     }
 }

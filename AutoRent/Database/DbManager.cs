@@ -107,13 +107,13 @@ namespace AutoRent.Database {
         public void ReturnCar(int clientID, int carID) {
             using (var ctx = new AppDbContext()) {
                 CarRent exisitngRent = ctx.Rents.First(x => x.ClientID == clientID && x.CarID == carID);
-                exisitngRent.LeaseEnded = DateTime.Now;
+                ctx.Rents.Remove(exisitngRent);
+                //exisitngRent.LeaseEnded = DateTime.Now;
                 CarEntity car = ctx.Cars.First(x => x.ID == carID);
                 car.ClientID = null;
                 ctx.SaveChanges();
             }
         }
-
         #endregion
     }
 }

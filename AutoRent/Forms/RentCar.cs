@@ -33,45 +33,40 @@ namespace AutoRent.Forms {
             }
         }
 
-        void TextBoxIntegerKeyPress(object sender, KeyPressEventArgs e) {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar)) {
+        void TextBoxIntegerKeyPress(Object sender, KeyPressEventArgs e) {
+            if (!Char.IsControl(e.KeyChar) && !Char.IsDigit(e.KeyChar)) {
                 e.Handled = true;
             }
         }
 
-        private void OnCalculatePriceButtonClick(object sender, EventArgs e) {
+        private void OnCalculatePriceButtonClick(Object sender, EventArgs e) {
             DataGridViewSelectedRowCollection rows = FreeCarGridView.SelectedRows;
             if (rows.Count == 0) { return; }
             var car = (CarEntity)rows[0].DataBoundItem;
             PriceBox.Text = car.RentPricePerDay * Convert.ToInt32(CountOfDaysBox.Text) + " EUR";
         }
 
-        void OnRentButtonClick(object sender, EventArgs e)
-        {
-            int countOfDays;
-            int.TryParse(CountOfDaysBox.Text, NumberStyles.Any, null, out countOfDays);
+        void OnRentButtonClick(Object sender, EventArgs e) {
+            Int32.TryParse(CountOfDaysBox.Text, NumberStyles.Any, null, out Int32 countOfDays);
 
             try {
                 DataGridViewSelectedRowCollection rows = FreeCarGridView.SelectedRows;
-                if (rows.Count == 0 || countOfDays == 0)
-                { return; }
+                if (rows.Count == 0 || countOfDays == 0) { return; }
                 var car = (CarEntity)rows[0].DataBoundItem;
 
-                var carRent = new CarRent
-                              {
-                                  CarID = car.ID,
-                                  ClientID = _client.ID,
-                                  LeaseStarted = DateTime.Now,
-                                  LeaseEnded = DateTime.Now.AddDays(Convert.ToInt32(CountOfDaysBox.Text))
-                              };
+                var carRent = new CarRent {
+                    CarID = car.ID,
+                    ClientID = _client.ID,
+                    LeaseStarted = DateTime.Now,
+                    LeaseEnded = DateTime.Now.AddDays(Convert.ToInt32(CountOfDaysBox.Text))
+                };
                 _mgr.RentCar(carRent);
                 refreshLists();
-            }
-            catch (Exception Exception) {
+            } catch (Exception Exception) {
                 Console.WriteLine(Exception);
                 throw;
             }
-            
+
         }
 
 
