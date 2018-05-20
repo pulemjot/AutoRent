@@ -32,6 +32,15 @@
             this.ButtonRent = new System.Windows.Forms.Button();
             this.RentedCars = new System.Windows.Forms.Label();
             this.RentedCarGridView = new System.Windows.Forms.DataGridView();
+            this.iDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.regNumberDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vendorDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.modelDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.yearDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gearUnitTypeDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rentPricePerDayDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.leaseStartedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.leaseEndedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.RentedCarList = new System.Windows.Forms.BindingSource(this.components);
             this.AvailableCarGridView = new System.Windows.Forms.DataGridView();
             this.vendorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -55,6 +64,23 @@
             this.PriceBox = new System.Windows.Forms.TextBox();
             this.RentButton = new System.Windows.Forms.Button();
             this.RentedCarsGridView = new System.Windows.Forms.DataGridView();
+            this.Vendor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Model = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RegNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RentPricePerDay = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LeaseStarted = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LeaseEnded = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GearUnitType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Year = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.regNumberDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vendorDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.modelDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.yearDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gearUnitTypeDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rentPricePerDayDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.leaseStartedDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.leaseEndedDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.carRentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -70,23 +96,6 @@
             this.PhoneNumberBox = new System.Windows.Forms.TextBox();
             this.AddressBox = new System.Windows.Forms.TextBox();
             this.EmailBox = new System.Windows.Forms.TextBox();
-            this.iDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.regNumberDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.vendorDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.modelDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.yearDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gearUnitTypeDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rentPricePerDayDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.leaseStartedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.leaseEndedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Vendor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Model = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RegNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RentPricePerDay = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LeaseStarted = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LeaseEnded = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GearUnitType = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Year = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.RentedCarGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.RentedCarList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.AvailableCarGridView)).BeginInit();
@@ -177,6 +186,67 @@
             this.RentedCarGridView.Name = "RentedCarGridView";
             this.RentedCarGridView.Size = new System.Drawing.Size(350, 225);
             this.RentedCarGridView.TabIndex = 25;
+            // 
+            // iDDataGridViewTextBoxColumn1
+            // 
+            this.iDDataGridViewTextBoxColumn1.DataPropertyName = "ID";
+            this.iDDataGridViewTextBoxColumn1.HeaderText = "ID";
+            this.iDDataGridViewTextBoxColumn1.Name = "iDDataGridViewTextBoxColumn1";
+            this.iDDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // regNumberDataGridViewTextBoxColumn2
+            // 
+            this.regNumberDataGridViewTextBoxColumn2.DataPropertyName = "RegNumber";
+            this.regNumberDataGridViewTextBoxColumn2.HeaderText = "RegNumber";
+            this.regNumberDataGridViewTextBoxColumn2.Name = "regNumberDataGridViewTextBoxColumn2";
+            this.regNumberDataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // vendorDataGridViewTextBoxColumn1
+            // 
+            this.vendorDataGridViewTextBoxColumn1.DataPropertyName = "Vendor";
+            this.vendorDataGridViewTextBoxColumn1.HeaderText = "Vendor";
+            this.vendorDataGridViewTextBoxColumn1.Name = "vendorDataGridViewTextBoxColumn1";
+            this.vendorDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // modelDataGridViewTextBoxColumn1
+            // 
+            this.modelDataGridViewTextBoxColumn1.DataPropertyName = "Model";
+            this.modelDataGridViewTextBoxColumn1.HeaderText = "Model";
+            this.modelDataGridViewTextBoxColumn1.Name = "modelDataGridViewTextBoxColumn1";
+            this.modelDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // yearDataGridViewTextBoxColumn2
+            // 
+            this.yearDataGridViewTextBoxColumn2.DataPropertyName = "Year";
+            this.yearDataGridViewTextBoxColumn2.HeaderText = "Year";
+            this.yearDataGridViewTextBoxColumn2.Name = "yearDataGridViewTextBoxColumn2";
+            this.yearDataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // gearUnitTypeDataGridViewTextBoxColumn2
+            // 
+            this.gearUnitTypeDataGridViewTextBoxColumn2.DataPropertyName = "GearUnitType";
+            this.gearUnitTypeDataGridViewTextBoxColumn2.HeaderText = "GearUnitType";
+            this.gearUnitTypeDataGridViewTextBoxColumn2.Name = "gearUnitTypeDataGridViewTextBoxColumn2";
+            this.gearUnitTypeDataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // rentPricePerDayDataGridViewTextBoxColumn2
+            // 
+            this.rentPricePerDayDataGridViewTextBoxColumn2.DataPropertyName = "RentPricePerDay";
+            this.rentPricePerDayDataGridViewTextBoxColumn2.HeaderText = "RentPricePerDay";
+            this.rentPricePerDayDataGridViewTextBoxColumn2.Name = "rentPricePerDayDataGridViewTextBoxColumn2";
+            this.rentPricePerDayDataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // leaseStartedDataGridViewTextBoxColumn
+            // 
+            this.leaseStartedDataGridViewTextBoxColumn.DataPropertyName = "LeaseStarted";
+            this.leaseStartedDataGridViewTextBoxColumn.HeaderText = "LeaseStarted";
+            this.leaseStartedDataGridViewTextBoxColumn.Name = "leaseStartedDataGridViewTextBoxColumn";
+            // 
+            // leaseEndedDataGridViewTextBoxColumn
+            // 
+            this.leaseEndedDataGridViewTextBoxColumn.DataPropertyName = "LeaseEnded";
+            this.leaseEndedDataGridViewTextBoxColumn.HeaderText = "LeaseEnded";
+            this.leaseEndedDataGridViewTextBoxColumn.Name = "leaseEndedDataGridViewTextBoxColumn";
             // 
             // RentedCarList
             // 
@@ -363,12 +433,14 @@
             // 
             // RentButton
             // 
+            this.RentButton.Enabled = false;
             this.RentButton.Location = new System.Drawing.Point(469, 515);
             this.RentButton.Name = "RentButton";
             this.RentButton.Size = new System.Drawing.Size(73, 23);
             this.RentButton.TabIndex = 24;
             this.RentButton.Text = "Rent";
             this.RentButton.UseVisualStyleBackColor = true;
+            this.RentButton.Click += new System.EventHandler(this.OnRentButtonClick);
             // 
             // RentedCarsGridView
             // 
@@ -382,12 +454,136 @@
             this.LeaseStarted,
             this.LeaseEnded,
             this.GearUnitType,
-            this.Year});
+            this.Year,
+            this.iDDataGridViewTextBoxColumn,
+            this.regNumberDataGridViewTextBoxColumn3,
+            this.vendorDataGridViewTextBoxColumn2,
+            this.modelDataGridViewTextBoxColumn2,
+            this.yearDataGridViewTextBoxColumn3,
+            this.gearUnitTypeDataGridViewTextBoxColumn3,
+            this.rentPricePerDayDataGridViewTextBoxColumn3,
+            this.leaseStartedDataGridViewTextBoxColumn1,
+            this.leaseEndedDataGridViewTextBoxColumn1});
             this.RentedCarsGridView.DataSource = this.RentedCarList;
             this.RentedCarsGridView.Location = new System.Drawing.Point(548, 313);
             this.RentedCarsGridView.Name = "RentedCarsGridView";
             this.RentedCarsGridView.Size = new System.Drawing.Size(350, 225);
             this.RentedCarsGridView.TabIndex = 25;
+            // 
+            // Vendor
+            // 
+            this.Vendor.DataPropertyName = "Vendor";
+            this.Vendor.HeaderText = "Vendor";
+            this.Vendor.Name = "Vendor";
+            this.Vendor.ReadOnly = true;
+            // 
+            // Model
+            // 
+            this.Model.DataPropertyName = "Model";
+            this.Model.HeaderText = "Model";
+            this.Model.Name = "Model";
+            this.Model.ReadOnly = true;
+            // 
+            // RegNumber
+            // 
+            this.RegNumber.DataPropertyName = "RegNumber";
+            this.RegNumber.HeaderText = "RegNumber";
+            this.RegNumber.Name = "RegNumber";
+            this.RegNumber.ReadOnly = true;
+            // 
+            // RentPricePerDay
+            // 
+            this.RentPricePerDay.DataPropertyName = "RentPricePerDay";
+            this.RentPricePerDay.HeaderText = "RentPricePerDay";
+            this.RentPricePerDay.Name = "RentPricePerDay";
+            this.RentPricePerDay.ReadOnly = true;
+            // 
+            // LeaseStarted
+            // 
+            this.LeaseStarted.DataPropertyName = "LeaseStarted";
+            this.LeaseStarted.HeaderText = "LeaseStarted";
+            this.LeaseStarted.Name = "LeaseStarted";
+            // 
+            // LeaseEnded
+            // 
+            this.LeaseEnded.DataPropertyName = "LeaseEnded";
+            this.LeaseEnded.HeaderText = "LeaseEnded";
+            this.LeaseEnded.Name = "LeaseEnded";
+            // 
+            // GearUnitType
+            // 
+            this.GearUnitType.DataPropertyName = "GearUnitType";
+            this.GearUnitType.HeaderText = "GearUnitType";
+            this.GearUnitType.Name = "GearUnitType";
+            this.GearUnitType.ReadOnly = true;
+            // 
+            // Year
+            // 
+            this.Year.DataPropertyName = "Year";
+            this.Year.HeaderText = "Year";
+            this.Year.Name = "Year";
+            this.Year.ReadOnly = true;
+            // 
+            // iDDataGridViewTextBoxColumn
+            // 
+            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
+            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
+            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
+            this.iDDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // regNumberDataGridViewTextBoxColumn3
+            // 
+            this.regNumberDataGridViewTextBoxColumn3.DataPropertyName = "RegNumber";
+            this.regNumberDataGridViewTextBoxColumn3.HeaderText = "RegNumber";
+            this.regNumberDataGridViewTextBoxColumn3.Name = "regNumberDataGridViewTextBoxColumn3";
+            this.regNumberDataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
+            // vendorDataGridViewTextBoxColumn2
+            // 
+            this.vendorDataGridViewTextBoxColumn2.DataPropertyName = "Vendor";
+            this.vendorDataGridViewTextBoxColumn2.HeaderText = "Vendor";
+            this.vendorDataGridViewTextBoxColumn2.Name = "vendorDataGridViewTextBoxColumn2";
+            this.vendorDataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // modelDataGridViewTextBoxColumn2
+            // 
+            this.modelDataGridViewTextBoxColumn2.DataPropertyName = "Model";
+            this.modelDataGridViewTextBoxColumn2.HeaderText = "Model";
+            this.modelDataGridViewTextBoxColumn2.Name = "modelDataGridViewTextBoxColumn2";
+            this.modelDataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // yearDataGridViewTextBoxColumn3
+            // 
+            this.yearDataGridViewTextBoxColumn3.DataPropertyName = "Year";
+            this.yearDataGridViewTextBoxColumn3.HeaderText = "Year";
+            this.yearDataGridViewTextBoxColumn3.Name = "yearDataGridViewTextBoxColumn3";
+            this.yearDataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
+            // gearUnitTypeDataGridViewTextBoxColumn3
+            // 
+            this.gearUnitTypeDataGridViewTextBoxColumn3.DataPropertyName = "GearUnitType";
+            this.gearUnitTypeDataGridViewTextBoxColumn3.HeaderText = "GearUnitType";
+            this.gearUnitTypeDataGridViewTextBoxColumn3.Name = "gearUnitTypeDataGridViewTextBoxColumn3";
+            this.gearUnitTypeDataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
+            // rentPricePerDayDataGridViewTextBoxColumn3
+            // 
+            this.rentPricePerDayDataGridViewTextBoxColumn3.DataPropertyName = "RentPricePerDay";
+            this.rentPricePerDayDataGridViewTextBoxColumn3.HeaderText = "RentPricePerDay";
+            this.rentPricePerDayDataGridViewTextBoxColumn3.Name = "rentPricePerDayDataGridViewTextBoxColumn3";
+            this.rentPricePerDayDataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
+            // leaseStartedDataGridViewTextBoxColumn1
+            // 
+            this.leaseStartedDataGridViewTextBoxColumn1.DataPropertyName = "LeaseStarted";
+            this.leaseStartedDataGridViewTextBoxColumn1.HeaderText = "LeaseStarted";
+            this.leaseStartedDataGridViewTextBoxColumn1.Name = "leaseStartedDataGridViewTextBoxColumn1";
+            // 
+            // leaseEndedDataGridViewTextBoxColumn1
+            // 
+            this.leaseEndedDataGridViewTextBoxColumn1.DataPropertyName = "LeaseEnded";
+            this.leaseEndedDataGridViewTextBoxColumn1.HeaderText = "LeaseEnded";
+            this.leaseEndedDataGridViewTextBoxColumn1.Name = "leaseEndedDataGridViewTextBoxColumn1";
             // 
             // carRentBindingSource
             // 
@@ -527,121 +723,6 @@
             this.EmailBox.Size = new System.Drawing.Size(319, 20);
             this.EmailBox.TabIndex = 16;
             // 
-            // iDDataGridViewTextBoxColumn1
-            // 
-            this.iDDataGridViewTextBoxColumn1.DataPropertyName = "ID";
-            this.iDDataGridViewTextBoxColumn1.HeaderText = "ID";
-            this.iDDataGridViewTextBoxColumn1.Name = "iDDataGridViewTextBoxColumn1";
-            this.iDDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // regNumberDataGridViewTextBoxColumn2
-            // 
-            this.regNumberDataGridViewTextBoxColumn2.DataPropertyName = "RegNumber";
-            this.regNumberDataGridViewTextBoxColumn2.HeaderText = "RegNumber";
-            this.regNumberDataGridViewTextBoxColumn2.Name = "regNumberDataGridViewTextBoxColumn2";
-            this.regNumberDataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
-            // vendorDataGridViewTextBoxColumn1
-            // 
-            this.vendorDataGridViewTextBoxColumn1.DataPropertyName = "Vendor";
-            this.vendorDataGridViewTextBoxColumn1.HeaderText = "Vendor";
-            this.vendorDataGridViewTextBoxColumn1.Name = "vendorDataGridViewTextBoxColumn1";
-            this.vendorDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // modelDataGridViewTextBoxColumn1
-            // 
-            this.modelDataGridViewTextBoxColumn1.DataPropertyName = "Model";
-            this.modelDataGridViewTextBoxColumn1.HeaderText = "Model";
-            this.modelDataGridViewTextBoxColumn1.Name = "modelDataGridViewTextBoxColumn1";
-            this.modelDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // yearDataGridViewTextBoxColumn2
-            // 
-            this.yearDataGridViewTextBoxColumn2.DataPropertyName = "Year";
-            this.yearDataGridViewTextBoxColumn2.HeaderText = "Year";
-            this.yearDataGridViewTextBoxColumn2.Name = "yearDataGridViewTextBoxColumn2";
-            this.yearDataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
-            // gearUnitTypeDataGridViewTextBoxColumn2
-            // 
-            this.gearUnitTypeDataGridViewTextBoxColumn2.DataPropertyName = "GearUnitType";
-            this.gearUnitTypeDataGridViewTextBoxColumn2.HeaderText = "GearUnitType";
-            this.gearUnitTypeDataGridViewTextBoxColumn2.Name = "gearUnitTypeDataGridViewTextBoxColumn2";
-            this.gearUnitTypeDataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
-            // rentPricePerDayDataGridViewTextBoxColumn2
-            // 
-            this.rentPricePerDayDataGridViewTextBoxColumn2.DataPropertyName = "RentPricePerDay";
-            this.rentPricePerDayDataGridViewTextBoxColumn2.HeaderText = "RentPricePerDay";
-            this.rentPricePerDayDataGridViewTextBoxColumn2.Name = "rentPricePerDayDataGridViewTextBoxColumn2";
-            this.rentPricePerDayDataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
-            // leaseStartedDataGridViewTextBoxColumn
-            // 
-            this.leaseStartedDataGridViewTextBoxColumn.DataPropertyName = "LeaseStarted";
-            this.leaseStartedDataGridViewTextBoxColumn.HeaderText = "LeaseStarted";
-            this.leaseStartedDataGridViewTextBoxColumn.Name = "leaseStartedDataGridViewTextBoxColumn";
-            // 
-            // leaseEndedDataGridViewTextBoxColumn
-            // 
-            this.leaseEndedDataGridViewTextBoxColumn.DataPropertyName = "LeaseEnded";
-            this.leaseEndedDataGridViewTextBoxColumn.HeaderText = "LeaseEnded";
-            this.leaseEndedDataGridViewTextBoxColumn.Name = "leaseEndedDataGridViewTextBoxColumn";
-            // 
-            // Vendor
-            // 
-            this.Vendor.DataPropertyName = "Vendor";
-            this.Vendor.HeaderText = "Vendor";
-            this.Vendor.Name = "Vendor";
-            this.Vendor.ReadOnly = true;
-            // 
-            // Model
-            // 
-            this.Model.DataPropertyName = "Model";
-            this.Model.HeaderText = "Model";
-            this.Model.Name = "Model";
-            this.Model.ReadOnly = true;
-            // 
-            // RegNumber
-            // 
-            this.RegNumber.DataPropertyName = "RegNumber";
-            this.RegNumber.HeaderText = "RegNumber";
-            this.RegNumber.Name = "RegNumber";
-            this.RegNumber.ReadOnly = true;
-            // 
-            // RentPricePerDay
-            // 
-            this.RentPricePerDay.DataPropertyName = "RentPricePerDay";
-            this.RentPricePerDay.HeaderText = "RentPricePerDay";
-            this.RentPricePerDay.Name = "RentPricePerDay";
-            this.RentPricePerDay.ReadOnly = true;
-            // 
-            // LeaseStarted
-            // 
-            this.LeaseStarted.DataPropertyName = "LeaseStarted";
-            this.LeaseStarted.HeaderText = "LeaseStarted";
-            this.LeaseStarted.Name = "LeaseStarted";
-            // 
-            // LeaseEnded
-            // 
-            this.LeaseEnded.DataPropertyName = "LeaseEnded";
-            this.LeaseEnded.HeaderText = "LeaseEnded";
-            this.LeaseEnded.Name = "LeaseEnded";
-            // 
-            // GearUnitType
-            // 
-            this.GearUnitType.DataPropertyName = "GearUnitType";
-            this.GearUnitType.HeaderText = "GearUnitType";
-            this.GearUnitType.Name = "GearUnitType";
-            this.GearUnitType.ReadOnly = true;
-            // 
-            // Year
-            // 
-            this.Year.DataPropertyName = "Year";
-            this.Year.HeaderText = "Year";
-            this.Year.Name = "Year";
-            this.Year.ReadOnly = true;
-            // 
             // RentCar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -747,5 +828,14 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn LeaseEnded;
         private System.Windows.Forms.DataGridViewTextBoxColumn GearUnitType;
         private System.Windows.Forms.DataGridViewTextBoxColumn Year;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn regNumberDataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn vendorDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn modelDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn yearDataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn gearUnitTypeDataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn rentPricePerDayDataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn leaseStartedDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn leaseEndedDataGridViewTextBoxColumn1;
     }
 }

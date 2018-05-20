@@ -24,6 +24,9 @@ namespace AutoRent.Forms {
             try {
                 AvailableCarList.DataSource = _mgr.GetFreeCars();
                 RentedCarList.DataSource = _client.Rents.Select(x => new CarRentViewModel(x));
+                if (_client.Rents.Count < 5) {
+                    RentButton.Enabled = true;
+                }
             } catch (Exception ex) {
                 MessageBox.Show(ex.Message, "Load Car List Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -40,6 +43,13 @@ namespace AutoRent.Forms {
             if (rows.Count == 0) { return; }
             var car = (CarEntity)rows[0].DataBoundItem;
             PriceBox.Text = car.RentPricePerDay * Convert.ToInt32(CountOfDaysBox.Text) + " EUR";
+        }
+
+        void OnRentButtonClick(object sender, EventArgs e) {
+            DataGridViewSelectedRowCollection rows = FreeCarGridView.SelectedRows;
+            if (rows.Count == 0) { return; }
+            var car = (CarEntity)rows[0].DataBoundItem;
+
         }
     }
 }
