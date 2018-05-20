@@ -62,9 +62,8 @@ namespace AutoRent.Forms {
                 };
                 _mgr.RentCar(carRent);
                 refreshLists();
-            } catch (Exception Exception) {
-                Console.WriteLine(Exception);
-                throw;
+            } catch (Exception ex) {
+                MessageBox.Show(ex.Message, "Rent Car Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
         }

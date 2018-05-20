@@ -21,7 +21,7 @@ namespace AutoRent.Forms {
 
         public ClientEntity AddedClient { get; private set; }
 
-        void ButtonSave_Click(object sender, EventArgs e) {
+        void ButtonSave_Click(Object sender, EventArgs e) {
             var ctx = new ValidationContext(_client);
             IList<ValidationResult> errors = new List<ValidationResult>();
             var sb = new StringBuilder();

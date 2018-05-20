@@ -1,11 +1,12 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace AutoRent.Models {
     class LoginModel : ViewModelBase {
-        string userName, pwd;
+        String userName, pwd;
 
         [Required]
-        public string UserName
+        public String UserName
         {
             get => userName;
             set
@@ -15,7 +16,7 @@ namespace AutoRent.Models {
             }
         }
         [Required]
-        public string Password {
+        public String Password {
             get => pwd;
             set {
                 pwd = value;

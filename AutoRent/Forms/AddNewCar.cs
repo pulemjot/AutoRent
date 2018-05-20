@@ -23,7 +23,7 @@ namespace AutoRent.Forms {
 
         public CarEntity AddedCar { get; private set; }
 
-        void ButtonSave_Click(object sender, EventArgs e) {
+        void ButtonSave_Click(Object sender, EventArgs e) {
             var ctx = new ValidationContext(_car);
             IList<ValidationResult> errors = new List<ValidationResult>();
             var sb = new StringBuilder();
@@ -42,13 +42,13 @@ namespace AutoRent.Forms {
                 MessageBox.Show(ex.Message, "Save car error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        void TextBoxIntegerKeyPress(object sender, KeyPressEventArgs e) {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar)) {
+        void TextBoxIntegerKeyPress(Object sender, KeyPressEventArgs e) {
+            if (!Char.IsControl(e.KeyChar) && !Char.IsDigit(e.KeyChar)) {
                 e.Handled = true;
             }
         }
-        void TextBoxDoubleKeyPress(object sender, KeyPressEventArgs e) {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+        void TextBoxDoubleKeyPress(Object sender, KeyPressEventArgs e) {
+            if (!Char.IsControl(e.KeyChar) && !Char.IsDigit(e.KeyChar) &&
                 (e.KeyChar != '.')) {
                 e.Handled = true;
             }

@@ -21,7 +21,7 @@ namespace AutoRent.Forms {
             RentPricePerDayBox.DataBindings.Add(nameof(TextBox.Text), _car, nameof(CarEntity.RentPricePerDay));
         }
 
-        void ButtonSave_Click(object sender, EventArgs e) {
+        void ButtonSave_Click(Object sender, EventArgs e) {
             var ctx = new ValidationContext(_car);
             IList<ValidationResult> errors = new List<ValidationResult>();
             var sb = new StringBuilder();

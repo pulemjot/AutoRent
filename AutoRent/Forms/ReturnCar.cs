@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Data;
 using System.Linq;
 using System.Windows.Forms;
 using AutoRent.Database;
@@ -21,22 +20,26 @@ namespace AutoRent.Forms {
             refreshLists();
         }
         void refreshLists() {
-            RentedCarList.DataSource = _mgr.GetClientWithRents(_client.ID).Rents.Select(x => new CarRentViewModel(x));
+            try {
+                RentedCarList.DataSource = _mgr.GetClientWithRents(_client.ID).Rents.Select(x => new CarRentViewModel(x));
+            } catch (Exception ex) {
+                MessageBox.Show(ex.Message, "Load Car List Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
-        void ButtonReturn_Click(object sender, EventArgs e) {
+        void ButtonReturn_Click(Object sender, EventArgs e) {
             DataGridViewSelectedRowCollection rows = RentedCarGridView.SelectedRows;
             if (rows.Count == 0) { return; }
             var car = (CarRentViewModel)rows[0].DataBoundItem;
-            var diff = (DateTime.Now - car.LeaseEnded.Value).Days;
+            Int32 diff = (DateTime.Now - car.LeaseEnded.Value).Days;
             if (diff > 0) {
                 MessageBox.Show($"Car lease expired. Penalty fee for {diff} days: {diff * car.RentPricePerDay} EUR", "Return Car", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             try {
-                _mgr.ReturnCar(_client.ID, car.ID);
+                _mgr.ReturnCar(car.ID);
                 refreshLists();
             } catch (Exception ex) {
-
+                MessageBox.Show(ex.Message, "Return Car Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

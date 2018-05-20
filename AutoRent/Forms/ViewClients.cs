@@ -17,7 +17,7 @@ namespace AutoRent.Forms {
                 MessageBox.Show(ex.Message, "Load Client List Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        void AddClient_Click(object sender, EventArgs e) {
+        void AddClient_Click(Object sender, EventArgs e) {
             var dlg = new AddNewClient();
             dlg.ShowDialog(this);
             if (dlg.AddedClient != null) {
@@ -25,7 +25,7 @@ namespace AutoRent.Forms {
             }
         }
 
-        void EditClient_Click(object sender, EventArgs e) {
+        void EditClient_Click(Object sender, EventArgs e) {
             DataGridViewSelectedRowCollection rows = ClientGridView.SelectedRows;
             if (rows.Count == 0) { return; }
             var car = (ClientEntity)rows[0].DataBoundItem;
@@ -34,11 +34,11 @@ namespace AutoRent.Forms {
             refreshClientList();
         }
 
-        private void RefreshClientListButton_Click(object sender, EventArgs e) {
+        private void RefreshClientListButton_Click(Object sender, EventArgs e) {
             refreshClientList();
         }
 
-        private void RentCar_Click(object sender, EventArgs e)
+        private void RentCar_Click(Object sender, EventArgs e)
         {
             DataGridViewSelectedRowCollection rows = ClientGridView.SelectedRows;
             if (rows.Count == 0) { return; }
@@ -48,7 +48,7 @@ namespace AutoRent.Forms {
             refreshClientList();
         }
 
-        private void ReturnCar_Click(object sender, EventArgs e) {
+        private void ReturnCar_Click(Object sender, EventArgs e) {
             DataGridViewSelectedRowCollection rows = ClientGridView.SelectedRows;
             if (rows.Count == 0) { return; }
             var client = (ClientEntity)rows[0].DataBoundItem;

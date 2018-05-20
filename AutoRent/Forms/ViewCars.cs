@@ -18,7 +18,7 @@ namespace AutoRent.Forms {
                 MessageBox.Show(ex.Message, "Load Car List Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        void RemoveCar_Click(object sender, EventArgs e) {
+        void RemoveCar_Click(Object sender, EventArgs e) {
             DataGridViewSelectedRowCollection rows = CarGridView.SelectedRows;
             if (rows.Count == 0) { return; }
             var car = (CarEntity)rows[0].DataBoundItem;
@@ -35,7 +35,7 @@ namespace AutoRent.Forms {
             }
         }
 
-        void AddCar_Click(object sender, EventArgs e) {
+        void AddCar_Click(Object sender, EventArgs e) {
             var dlg = new AddNewCar();
             dlg.ShowDialog(this);
             if (dlg.AddedCar != null) {
@@ -43,7 +43,7 @@ namespace AutoRent.Forms {
             }
         }
 
-        void EditCar_Click(object sender, EventArgs e) {
+        void EditCar_Click(Object sender, EventArgs e) {
             DataGridViewSelectedRowCollection rows = CarGridView.SelectedRows;
             if (rows.Count == 0) { return; }
             var car = (CarEntity)rows[0].DataBoundItem;
@@ -52,7 +52,7 @@ namespace AutoRent.Forms {
             refreshCarList();
         }
 
-        void RefreshCarListButton_Click(object sender, EventArgs e) {
+        void RefreshCarListButton_Click(Object sender, EventArgs e) {
             refreshCarList();
         }
     }

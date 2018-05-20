@@ -10,11 +10,11 @@ namespace AutoRent.Database
     class CarRent
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int ID { get; set; }
-        public int CarID { get; set; }
+        public Int32 ID { get; set; }
+        public Int32 CarID { get; set; }
         [ForeignKey(nameof(CarID))]
         public CarEntity Car { get; set; }
-        public int ClientID { get; set; }
+        public Int32 ClientID { get; set; }
         [ForeignKey(nameof(ClientID))]
         public ClientEntity Client { get; set; }
         public DateTime LeaseStarted { get; set; }

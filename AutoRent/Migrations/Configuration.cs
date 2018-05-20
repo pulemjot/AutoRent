@@ -14,7 +14,7 @@ namespace AutoRent.Migrations {
 
         protected override void Seed(AppDbContext context) {
             if (!context.Operators.Any()) {
-                string pwd = null;
+                String pwd = null;
                 using (HashAlgorithm halg = HashAlgorithm.Create("sha256")) {
                     Byte[] hash = halg.ComputeHash(Encoding.Unicode.GetBytes("password"));
                     foreach (Byte b in hash) {

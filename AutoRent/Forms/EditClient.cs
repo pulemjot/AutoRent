@@ -22,7 +22,7 @@ namespace AutoRent.Forms {
             AddressBox.DataBindings.Add(nameof(TextBox.Text), _client, nameof(ClientEntity.Address));
         }
 
-        private void ButtonSave_Click(object sender, EventArgs e) {
+        private void ButtonSave_Click(Object sender, EventArgs e) {
             var ctx = new ValidationContext(_client);
             IList<ValidationResult> errors = new List<ValidationResult>();
             var sb = new StringBuilder();

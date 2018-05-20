@@ -5,8 +5,8 @@ using AutoRent.Models;
 
 namespace AutoRent.Forms {
     public partial class Authorization : Form {
-        const string LoginFailed = "The username or password is incorrect.";
-        const string ConnectionFailed = "Could not establish connection with database.";
+        const String LoginFailed = "The username or password is incorrect.";
+        const String ConnectionFailed = "Could not establish connection with database.";
         readonly LoginModel _loginModel = new LoginModel();
 
         public Authorization() {
@@ -15,7 +15,7 @@ namespace AutoRent.Forms {
             passwordBox.DataBindings.Add(nameof(TextBox.Text), _loginModel, nameof(LoginModel.Password));
         }
 
-        void LoginButton_Click(object sender, EventArgs e) {
+        void LoginButton_Click(Object sender, EventArgs e) {
             var mgr = new DbManager();
             try {
                 Boolean result = mgr.VerifyCredentials(_loginModel.UserName, _loginModel.Password);

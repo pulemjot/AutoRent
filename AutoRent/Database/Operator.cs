@@ -11,10 +11,10 @@ namespace AutoRent.Database
     class Operator
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int ID { get; set; }
+        public Int32 ID { get; set; }
         [Required]
-        public string UserName { get; set; }
+        public String UserName { get; set; }
         [Required]
-        public string HashedPassword { get; set; }
+        public String HashedPassword { get; set; }
     }
 }

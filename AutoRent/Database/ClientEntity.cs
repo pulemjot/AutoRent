@@ -5,20 +5,20 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace AutoRent.Database {
     class ClientEntity {
-        public int ID { get; set; }
+        public Int32 ID { get; set; }
         [Required]
-        public string FirstName { get; set; }
+        public String FirstName { get; set; }
         [Required]
-        public string LastName { get; set; }
+        public String LastName { get; set; }
         [Required, RegularExpression(@"\d{6}-\d{5}")]
-        public string PersonalNumber { get; set; }
+        public String PersonalNumber { get; set; }
         [Phone]
-        public string PhoneNumber { get; set; }
+        public String PhoneNumber { get; set; }
         [EmailAddress]
-        public string Email { get; set; }
-        public string Address { get; set; }
+        public String Email { get; set; }
+        public String Address { get; set; }
         [NotMapped]
-        public int ActiveRentCount { get; set; }
+        public Int32 ActiveRentCount { get; set; }
         public ICollection<CarRent> Rents { get; set; }
 
         public override Boolean Equals(Object obj) {
@@ -28,10 +28,10 @@ namespace AutoRent.Database {
                 return true;
             return obj is ClientEntity other && Equals(other);
         }
-        protected bool Equals(ClientEntity other) {
+        protected Boolean Equals(ClientEntity other) {
             return ID == other.ID;
         }
-        public override int GetHashCode() {
+        public override Int32 GetHashCode() {
             return ID;
         }
     }

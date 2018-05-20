@@ -7,7 +7,7 @@ using System.Text;
 
 namespace AutoRent.Database {
     class DbManager {
-        public bool VerifyCredentials(string userName, string password) {
+        public Boolean VerifyCredentials(String userName, String password) {
             using (var ctx = new AppDbContext()) {
                 String pwd = String.Empty;
                 using (HashAlgorithm halg = HashAlgorithm.Create("sha256")) {
@@ -104,12 +104,11 @@ namespace AutoRent.Database {
                 ctx.SaveChanges();
             }
         }
-        public void ReturnCar(int clientID, int carID) {
+        public void ReturnCar(Int32 leaseID) {
             using (var ctx = new AppDbContext()) {
-                CarRent exisitngRent = ctx.Rents.First(x => x.ClientID == clientID && x.CarID == carID);
+                CarRent exisitngRent = ctx.Rents.First(x => x.ID == leaseID);
                 ctx.Rents.Remove(exisitngRent);
-                //exisitngRent.LeaseEnded = DateTime.Now;
-                CarEntity car = ctx.Cars.First(x => x.ID == carID);
+                CarEntity car = ctx.Cars.First(x => x.ID == exisitngRent.CarID);
                 car.ClientID = null;
                 ctx.SaveChanges();
             }
