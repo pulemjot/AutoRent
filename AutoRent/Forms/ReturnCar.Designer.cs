@@ -48,7 +48,7 @@
             // 
             // ButtonReturn
             // 
-            this.ButtonReturn.Location = new System.Drawing.Point(596, 233);
+            this.ButtonReturn.Location = new System.Drawing.Point(660, 233);
             this.ButtonReturn.Name = "ButtonReturn";
             this.ButtonReturn.Size = new System.Drawing.Size(73, 23);
             this.ButtonReturn.TabIndex = 43;
@@ -59,7 +59,7 @@
             // RentedCars
             // 
             this.RentedCars.AutoSize = true;
-            this.RentedCars.Location = new System.Drawing.Point(347, 15);
+            this.RentedCars.Location = new System.Drawing.Point(369, 15);
             this.RentedCars.Name = "RentedCars";
             this.RentedCars.Size = new System.Drawing.Size(66, 13);
             this.RentedCars.TabIndex = 38;
@@ -68,9 +68,9 @@
             // RentedCarGridView
             // 
             this.RentedCarGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.RentedCarGridView.Location = new System.Drawing.Point(347, 31);
+            this.RentedCarGridView.Location = new System.Drawing.Point(372, 31);
             this.RentedCarGridView.Name = "RentedCarGridView";
-            this.RentedCarGridView.Size = new System.Drawing.Size(240, 225);
+            this.RentedCarGridView.Size = new System.Drawing.Size(270, 225);
             this.RentedCarGridView.TabIndex = 37;
             // 
             // AddressBox

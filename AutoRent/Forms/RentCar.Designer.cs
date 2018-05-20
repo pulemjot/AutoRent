@@ -29,18 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.Address = new System.Windows.Forms.Label();
-            this.Email = new System.Windows.Forms.Label();
-            this.PhoneNumber = new System.Windows.Forms.Label();
-            this.PersonalNumber = new System.Windows.Forms.Label();
-            this.LastName = new System.Windows.Forms.Label();
-            this.FirstName = new System.Windows.Forms.Label();
-            this.AddressBox = new System.Windows.Forms.TextBox();
-            this.EmailBox = new System.Windows.Forms.TextBox();
-            this.PhoneNumberBox = new System.Windows.Forms.TextBox();
-            this.PersonalNumberBox = new System.Windows.Forms.TextBox();
-            this.LastNameBox = new System.Windows.Forms.TextBox();
-            this.FirstNameBox = new System.Windows.Forms.TextBox();
             this.AvailableCars = new System.Windows.Forms.Label();
             this.CountOfDays = new System.Windows.Forms.Label();
             this.CountOfDaysTextBox = new System.Windows.Forms.TextBox();
@@ -57,119 +45,42 @@
             this.gearUnitTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rentPricePerDayDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cars = new System.Windows.Forms.BindingSource(this.components);
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.label3 = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.FirstNameBox = new System.Windows.Forms.TextBox();
+            this.LastNameBox = new System.Windows.Forms.TextBox();
+            this.PersonalNumberBox = new System.Windows.Forms.TextBox();
+            this.PhoneNumberBox = new System.Windows.Forms.TextBox();
+            this.AddressBox = new System.Windows.Forms.TextBox();
+            this.EmailBox = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.RentedCarGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.AvailableCarGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Cars)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // Address
-            // 
-            this.Address.AutoSize = true;
-            this.Address.Location = new System.Drawing.Point(12, 190);
-            this.Address.Name = "Address";
-            this.Address.Size = new System.Drawing.Size(45, 13);
-            this.Address.TabIndex = 11;
-            this.Address.Text = "Address";
-            // 
-            // Email
-            // 
-            this.Email.AutoSize = true;
-            this.Email.Location = new System.Drawing.Point(12, 153);
-            this.Email.Name = "Email";
-            this.Email.Size = new System.Drawing.Size(32, 13);
-            this.Email.TabIndex = 10;
-            this.Email.Text = "Email";
-            // 
-            // PhoneNumber
-            // 
-            this.PhoneNumber.AutoSize = true;
-            this.PhoneNumber.Location = new System.Drawing.Point(12, 119);
-            this.PhoneNumber.Name = "PhoneNumber";
-            this.PhoneNumber.Size = new System.Drawing.Size(78, 13);
-            this.PhoneNumber.TabIndex = 9;
-            this.PhoneNumber.Text = "Phone Number";
-            // 
-            // PersonalNumber
-            // 
-            this.PersonalNumber.AutoSize = true;
-            this.PersonalNumber.Location = new System.Drawing.Point(12, 82);
-            this.PersonalNumber.Name = "PersonalNumber";
-            this.PersonalNumber.Size = new System.Drawing.Size(88, 13);
-            this.PersonalNumber.TabIndex = 8;
-            this.PersonalNumber.Text = "Personal Number";
-            // 
-            // LastName
-            // 
-            this.LastName.AutoSize = true;
-            this.LastName.Location = new System.Drawing.Point(12, 45);
-            this.LastName.Name = "LastName";
-            this.LastName.Size = new System.Drawing.Size(58, 13);
-            this.LastName.TabIndex = 7;
-            this.LastName.Text = "Last Name";
-            // 
-            // FirstName
-            // 
-            this.FirstName.AutoSize = true;
-            this.FirstName.Location = new System.Drawing.Point(12, 9);
-            this.FirstName.Name = "FirstName";
-            this.FirstName.Size = new System.Drawing.Size(57, 13);
-            this.FirstName.TabIndex = 6;
-            this.FirstName.Text = "First Name";
-            // 
-            // AddressBox
-            // 
-            this.AddressBox.Enabled = false;
-            this.AddressBox.Location = new System.Drawing.Point(106, 187);
-            this.AddressBox.Multiline = true;
-            this.AddressBox.Name = "AddressBox";
-            this.AddressBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.AddressBox.Size = new System.Drawing.Size(240, 63);
-            this.AddressBox.TabIndex = 17;
-            // 
-            // EmailBox
-            // 
-            this.EmailBox.Enabled = false;
-            this.EmailBox.Location = new System.Drawing.Point(106, 150);
-            this.EmailBox.Name = "EmailBox";
-            this.EmailBox.Size = new System.Drawing.Size(240, 20);
-            this.EmailBox.TabIndex = 16;
-            // 
-            // PhoneNumberBox
-            // 
-            this.PhoneNumberBox.Enabled = false;
-            this.PhoneNumberBox.Location = new System.Drawing.Point(106, 116);
-            this.PhoneNumberBox.Name = "PhoneNumberBox";
-            this.PhoneNumberBox.Size = new System.Drawing.Size(240, 20);
-            this.PhoneNumberBox.TabIndex = 15;
-            // 
-            // PersonalNumberBox
-            // 
-            this.PersonalNumberBox.Enabled = false;
-            this.PersonalNumberBox.Location = new System.Drawing.Point(106, 79);
-            this.PersonalNumberBox.Name = "PersonalNumberBox";
-            this.PersonalNumberBox.Size = new System.Drawing.Size(240, 20);
-            this.PersonalNumberBox.TabIndex = 14;
-            // 
-            // LastNameBox
-            // 
-            this.LastNameBox.Enabled = false;
-            this.LastNameBox.Location = new System.Drawing.Point(106, 42);
-            this.LastNameBox.Name = "LastNameBox";
-            this.LastNameBox.Size = new System.Drawing.Size(240, 20);
-            this.LastNameBox.TabIndex = 13;
-            // 
-            // FirstNameBox
-            // 
-            this.FirstNameBox.Enabled = false;
-            this.FirstNameBox.Location = new System.Drawing.Point(106, 6);
-            this.FirstNameBox.Name = "FirstNameBox";
-            this.FirstNameBox.Size = new System.Drawing.Size(240, 20);
-            this.FirstNameBox.TabIndex = 12;
             // 
             // AvailableCars
             // 
             this.AvailableCars.AutoSize = true;
-            this.AvailableCars.Location = new System.Drawing.Point(352, 9);
+            this.AvailableCars.Location = new System.Drawing.Point(15, 297);
             this.AvailableCars.Name = "AvailableCars";
             this.AvailableCars.Size = new System.Drawing.Size(74, 13);
             this.AvailableCars.TabIndex = 19;
@@ -178,7 +89,7 @@
             // CountOfDays
             // 
             this.CountOfDays.AutoSize = true;
-            this.CountOfDays.Location = new System.Drawing.Point(803, 25);
+            this.CountOfDays.Location = new System.Drawing.Point(466, 313);
             this.CountOfDays.Name = "CountOfDays";
             this.CountOfDays.Size = new System.Drawing.Size(76, 13);
             this.CountOfDays.TabIndex = 20;
@@ -186,14 +97,14 @@
             // 
             // CountOfDaysTextBox
             // 
-            this.CountOfDaysTextBox.Location = new System.Drawing.Point(806, 42);
+            this.CountOfDaysTextBox.Location = new System.Drawing.Point(469, 330);
             this.CountOfDaysTextBox.Name = "CountOfDaysTextBox";
             this.CountOfDaysTextBox.Size = new System.Drawing.Size(73, 20);
             this.CountOfDaysTextBox.TabIndex = 21;
             // 
             // ButtonCalculate
             // 
-            this.ButtonCalculate.Location = new System.Drawing.Point(806, 68);
+            this.ButtonCalculate.Location = new System.Drawing.Point(469, 356);
             this.ButtonCalculate.Name = "ButtonCalculate";
             this.ButtonCalculate.Size = new System.Drawing.Size(73, 23);
             this.ButtonCalculate.TabIndex = 22;
@@ -203,7 +114,7 @@
             // PriceTextBox
             // 
             this.PriceTextBox.Enabled = false;
-            this.PriceTextBox.Location = new System.Drawing.Point(806, 97);
+            this.PriceTextBox.Location = new System.Drawing.Point(469, 385);
             this.PriceTextBox.Name = "PriceTextBox";
             this.PriceTextBox.Size = new System.Drawing.Size(73, 20);
             this.PriceTextBox.TabIndex = 23;
@@ -211,7 +122,7 @@
             // 
             // ButtonRent
             // 
-            this.ButtonRent.Location = new System.Drawing.Point(806, 227);
+            this.ButtonRent.Location = new System.Drawing.Point(469, 515);
             this.ButtonRent.Name = "ButtonRent";
             this.ButtonRent.Size = new System.Drawing.Size(73, 23);
             this.ButtonRent.TabIndex = 24;
@@ -221,7 +132,7 @@
             // RentedCars
             // 
             this.RentedCars.AutoSize = true;
-            this.RentedCars.Location = new System.Drawing.Point(882, 9);
+            this.RentedCars.Location = new System.Drawing.Point(545, 297);
             this.RentedCars.Name = "RentedCars";
             this.RentedCars.Size = new System.Drawing.Size(66, 13);
             this.RentedCars.TabIndex = 26;
@@ -230,7 +141,7 @@
             // RentedCarGridView
             // 
             this.RentedCarGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.RentedCarGridView.Location = new System.Drawing.Point(885, 25);
+            this.RentedCarGridView.Location = new System.Drawing.Point(548, 313);
             this.RentedCarGridView.Name = "RentedCarGridView";
             this.RentedCarGridView.Size = new System.Drawing.Size(350, 225);
             this.RentedCarGridView.TabIndex = 25;
@@ -250,7 +161,7 @@
             this.gearUnitTypeDataGridViewTextBoxColumn,
             this.rentPricePerDayDataGridViewTextBoxColumn});
             this.AvailableCarGridView.DataSource = this.Cars;
-            this.AvailableCarGridView.Location = new System.Drawing.Point(352, 25);
+            this.AvailableCarGridView.Location = new System.Drawing.Point(15, 313);
             this.AvailableCarGridView.MultiSelect = false;
             this.AvailableCarGridView.Name = "AvailableCarGridView";
             this.AvailableCarGridView.ReadOnly = true;
@@ -304,57 +215,271 @@
             // 
             this.Cars.DataSource = typeof(AutoRent.Database.CarEntity);
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AllowUserToOrderColumns = true;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2});
+            this.dataGridView1.Location = new System.Drawing.Point(15, 313);
+            this.dataGridView1.MultiSelect = false;
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(445, 225);
+            this.dataGridView1.TabIndex = 0;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "Vendor";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Vendor";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "Model";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Model";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(15, 297);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(74, 13);
+            this.label1.TabIndex = 19;
+            this.label1.Text = "Available Cars";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(466, 313);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(76, 13);
+            this.label2.TabIndex = 20;
+            this.label2.Text = "Count Of Days";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(469, 330);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(73, 20);
+            this.textBox1.TabIndex = 21;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(469, 356);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(73, 23);
+            this.button1.TabIndex = 22;
+            this.button1.Text = "Calculate";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Enabled = false;
+            this.textBox2.Location = new System.Drawing.Point(469, 385);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(73, 20);
+            this.textBox2.TabIndex = 23;
+            this.textBox2.Text = "Price";
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(469, 515);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(73, 23);
+            this.button2.TabIndex = 24;
+            this.button2.Text = "Rent";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(548, 313);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.Size = new System.Drawing.Size(350, 225);
+            this.dataGridView2.TabIndex = 25;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(545, 297);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(66, 13);
+            this.label3.TabIndex = 26;
+            this.label3.Text = "Rented Cars";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.label4);
+            this.groupBox2.Controls.Add(this.label5);
+            this.groupBox2.Controls.Add(this.label6);
+            this.groupBox2.Controls.Add(this.label7);
+            this.groupBox2.Controls.Add(this.label8);
+            this.groupBox2.Controls.Add(this.label9);
+            this.groupBox2.Controls.Add(this.FirstNameBox);
+            this.groupBox2.Controls.Add(this.LastNameBox);
+            this.groupBox2.Controls.Add(this.PersonalNumberBox);
+            this.groupBox2.Controls.Add(this.PhoneNumberBox);
+            this.groupBox2.Controls.Add(this.AddressBox);
+            this.groupBox2.Controls.Add(this.EmailBox);
+            this.groupBox2.Location = new System.Drawing.Point(12, 12);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(442, 282);
+            this.groupBox2.TabIndex = 27;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Client Details";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(14, 25);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(57, 13);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "First Name";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(14, 61);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(58, 13);
+            this.label5.TabIndex = 7;
+            this.label5.Text = "Last Name";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(14, 98);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(88, 13);
+            this.label6.TabIndex = 8;
+            this.label6.Text = "Personal Number";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(14, 135);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(78, 13);
+            this.label7.TabIndex = 9;
+            this.label7.Text = "Phone Number";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(14, 169);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(32, 13);
+            this.label8.TabIndex = 10;
+            this.label8.Text = "Email";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(14, 206);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(45, 13);
+            this.label9.TabIndex = 11;
+            this.label9.Text = "Address";
+            // 
+            // FirstNameBox
+            // 
+            this.FirstNameBox.Enabled = false;
+            this.FirstNameBox.Location = new System.Drawing.Point(108, 22);
+            this.FirstNameBox.Name = "FirstNameBox";
+            this.FirstNameBox.Size = new System.Drawing.Size(319, 20);
+            this.FirstNameBox.TabIndex = 12;
+            // 
+            // LastNameBox
+            // 
+            this.LastNameBox.Enabled = false;
+            this.LastNameBox.Location = new System.Drawing.Point(108, 58);
+            this.LastNameBox.Name = "LastNameBox";
+            this.LastNameBox.Size = new System.Drawing.Size(319, 20);
+            this.LastNameBox.TabIndex = 13;
+            // 
+            // PersonalNumberBox
+            // 
+            this.PersonalNumberBox.Enabled = false;
+            this.PersonalNumberBox.Location = new System.Drawing.Point(108, 95);
+            this.PersonalNumberBox.Name = "PersonalNumberBox";
+            this.PersonalNumberBox.Size = new System.Drawing.Size(319, 20);
+            this.PersonalNumberBox.TabIndex = 14;
+            // 
+            // PhoneNumberBox
+            // 
+            this.PhoneNumberBox.Enabled = false;
+            this.PhoneNumberBox.Location = new System.Drawing.Point(108, 132);
+            this.PhoneNumberBox.Name = "PhoneNumberBox";
+            this.PhoneNumberBox.Size = new System.Drawing.Size(319, 20);
+            this.PhoneNumberBox.TabIndex = 15;
+            // 
+            // AddressBox
+            // 
+            this.AddressBox.Enabled = false;
+            this.AddressBox.Location = new System.Drawing.Point(108, 203);
+            this.AddressBox.Multiline = true;
+            this.AddressBox.Name = "AddressBox";
+            this.AddressBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.AddressBox.Size = new System.Drawing.Size(319, 63);
+            this.AddressBox.TabIndex = 17;
+            // 
+            // EmailBox
+            // 
+            this.EmailBox.Enabled = false;
+            this.EmailBox.Location = new System.Drawing.Point(108, 166);
+            this.EmailBox.Name = "EmailBox";
+            this.EmailBox.Size = new System.Drawing.Size(319, 20);
+            this.EmailBox.TabIndex = 16;
+            // 
             // RentCar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1247, 409);
+            this.ClientSize = new System.Drawing.Size(931, 550);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.RentedCars);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.RentedCarGridView);
+            this.Controls.Add(this.textBox2);
             this.Controls.Add(this.ButtonRent);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.PriceTextBox);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.ButtonCalculate);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.CountOfDaysTextBox);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.CountOfDays);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.AvailableCars);
             this.Controls.Add(this.AvailableCarGridView);
-            this.Controls.Add(this.AddressBox);
-            this.Controls.Add(this.EmailBox);
-            this.Controls.Add(this.PhoneNumberBox);
-            this.Controls.Add(this.PersonalNumberBox);
-            this.Controls.Add(this.LastNameBox);
-            this.Controls.Add(this.FirstNameBox);
-            this.Controls.Add(this.Address);
-            this.Controls.Add(this.Email);
-            this.Controls.Add(this.PhoneNumber);
-            this.Controls.Add(this.PersonalNumber);
-            this.Controls.Add(this.LastName);
-            this.Controls.Add(this.FirstName);
             this.Name = "RentCar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Rent Car";
             ((System.ComponentModel.ISupportInitialize)(this.RentedCarGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.AvailableCarGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Cars)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label Address;
-        private System.Windows.Forms.Label Email;
-        private System.Windows.Forms.Label PhoneNumber;
-        private System.Windows.Forms.Label PersonalNumber;
-        private System.Windows.Forms.Label LastName;
-        private System.Windows.Forms.Label FirstName;
-        private System.Windows.Forms.TextBox AddressBox;
-        private System.Windows.Forms.TextBox EmailBox;
-        private System.Windows.Forms.TextBox PhoneNumberBox;
-        private System.Windows.Forms.TextBox PersonalNumberBox;
-        private System.Windows.Forms.TextBox LastNameBox;
-        private System.Windows.Forms.TextBox FirstNameBox;
         private System.Windows.Forms.BindingSource Cars;
         private System.Windows.Forms.DataGridView AvailableCarGridView;
         private System.Windows.Forms.Label AvailableCars;
@@ -371,5 +496,29 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn yearDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn gearUnitTypeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn rentPricePerDayDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox FirstNameBox;
+        private System.Windows.Forms.TextBox LastNameBox;
+        private System.Windows.Forms.TextBox PersonalNumberBox;
+        private System.Windows.Forms.TextBox PhoneNumberBox;
+        private System.Windows.Forms.TextBox AddressBox;
+        private System.Windows.Forms.TextBox EmailBox;
     }
 }
