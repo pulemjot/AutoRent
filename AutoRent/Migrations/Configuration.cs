@@ -6,8 +6,7 @@ using System.Text;
 using AutoRent.Database;
 
 namespace AutoRent.Migrations {
-
-    internal sealed class Configuration : DbMigrationsConfiguration<AppDbContext> {
+    sealed class Configuration : DbMigrationsConfiguration<AppDbContext> {
         public Configuration() {
             AutomaticMigrationsEnabled = false;
         }

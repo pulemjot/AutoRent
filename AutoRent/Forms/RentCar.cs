@@ -13,22 +13,13 @@ namespace AutoRent.Forms {
         public RentCar(ClientEntity client) {
             InitializeComponent();
             _client = client;
-            refreshLists();
+            RefreshLists();
             FirstNameBox.DataBindings.Add(nameof(TextBox.Text), _client, nameof(ClientEntity.FirstName));
             LastNameBox.DataBindings.Add(nameof(TextBox.Text), _client, nameof(ClientEntity.LastName));
             PersonalNumberBox.DataBindings.Add(nameof(TextBox.Text), _client, nameof(ClientEntity.PersonalNumber));
             PhoneNumberBox.DataBindings.Add(nameof(TextBox.Text), _client, nameof(ClientEntity.PhoneNumber));
             EmailBox.DataBindings.Add(nameof(TextBox.Text), _client, nameof(ClientEntity.Email));
             AddressBox.DataBindings.Add(nameof(TextBox.Text), _client, nameof(ClientEntity.Address));
-        }
-        void refreshLists() {
-            try {
-                AvailableCarList.DataSource = _mgr.GetFreeCars();
-                RentedCarList.DataSource = _mgr.GetClientWithRents(_client.ID).Rents.Select(x => new CarRentViewModel(x));
-                RentButton.Enabled = RentedCarList.Count < 5;
-            } catch (Exception ex) {
-                MessageBox.Show(ex.Message, "Load Car List Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
         }
 
         void TextBoxIntegerKeyPress(Object sender, KeyPressEventArgs e) {
@@ -37,13 +28,21 @@ namespace AutoRent.Forms {
             }
         }
 
-        private void OnCalculatePriceButtonClick(Object sender, EventArgs e) {
+        void RefreshLists() {
+            try {
+                AvailableCarList.DataSource = _mgr.GetFreeCars();
+                RentedCarList.DataSource = _mgr.GetClientWithRents(_client.ID).Rents.Select(x => new CarRentViewModel(x));
+                RentButton.Enabled = RentedCarList.Count < 5;
+            } catch (Exception ex) {
+                MessageBox.Show(ex.Message, "Load Car List Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        void OnCalculatePriceButtonClick(Object sender, EventArgs e) {
             DataGridViewSelectedRowCollection rows = FreeCarGridView.SelectedRows;
             if (rows.Count == 0) { return; }
             var car = (CarEntity)rows[0].DataBoundItem;
             PriceBox.Text = car.RentPricePerDay * Convert.ToInt32(CountOfDaysBox.Text) + " EUR";
         }
-
         void OnRentButtonClick(Object sender, EventArgs e) {
             Int32.TryParse(CountOfDaysBox.Text, NumberStyles.Any, null, out Int32 countOfDays);
 
@@ -58,7 +57,7 @@ namespace AutoRent.Forms {
                     LeaseEnded = DateTime.Now.AddDays(Convert.ToInt32(CountOfDaysBox.Text))
                 };
                 _mgr.RentCar(carRent);
-                refreshLists();
+                RefreshLists();
             } catch (Exception ex) {
                 MessageBox.Show(ex.Message, "Rent Car Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }

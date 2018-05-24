@@ -2,10 +2,8 @@
 using System.Windows.Forms;
 
 namespace AutoRent.Forms {
-    public partial class MainPanel : Form
-    {
-        public MainPanel()
-        {
+    public partial class MainPanel : Form {
+        public MainPanel() {
             InitializeComponent();
         }
 

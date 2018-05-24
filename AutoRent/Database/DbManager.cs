@@ -9,15 +9,14 @@ namespace AutoRent.Database {
     class DbManager {
         public Boolean VerifyCredentials(String userName, String password) {
             using (var ctx = new AppDbContext()) {
-                String pwd = String.Empty;
+                StringBuilder sb = new StringBuilder();
                 using (HashAlgorithm halg = HashAlgorithm.Create("sha256")) {
                     Byte[] hash = halg.ComputeHash(Encoding.Unicode.GetBytes(password));
                     foreach (Byte b in hash) {
-                        pwd += $"{b:x2}";
+                        sb.Append($"{b:x2}");
                     }
                 }
-
-                return ctx.Operators.Any(x => x.UserName == userName && x.HashedPassword.Equals(pwd));
+                return ctx.Operators.Any(x => x.UserName == userName && x.HashedPassword.Equals(sb.ToString()));
             }
         }
 
@@ -34,8 +33,7 @@ namespace AutoRent.Database {
         }
         public void AddCar(CarEntity car) {
             using (var ctx = new AppDbContext()) {
-                if (ctx.Cars.Any(x => x.RegNumber == car.RegNumber))
-                {
+                if (ctx.Cars.Any(x => x.RegNumber == car.RegNumber)) {
                     throw new Exception("Car with such registration number exists!");
                 }
                 ctx.Cars.Add(car);
@@ -44,8 +42,7 @@ namespace AutoRent.Database {
         }
         public void EditCar(CarEntity car) {
             using (var ctx = new AppDbContext()) {
-                if (ctx.Cars.Any(x => x.RegNumber == car.RegNumber))
-                {
+                if (ctx.Cars.Any(x => x.RegNumber == car.RegNumber)) {
                     throw new Exception("Car with such registration number exists!");
                 }
                 CarEntity existingCar = ctx.Cars.First(x => x.ID == car.ID);
@@ -56,17 +53,14 @@ namespace AutoRent.Database {
         }
         public void RemoveCar(CarEntity car) {
             using (var ctx = new AppDbContext()) {
-                if (car.ClientID != null)
-                {
+                if (car.ClientID != null) {
                     CarEntity existingCar = ctx.Cars.First(x => x.ID == car.ID);
-                ctx.Cars.Remove(existingCar);
-                ctx.SaveChanges();
-                }
-                else
-                {
+                    ctx.Cars.Remove(existingCar);
+                    ctx.SaveChanges();
+                } else {
                     throw new Exception("Car is rented!");
                 }
-                
+
             }
         }
         #endregion
@@ -85,8 +79,7 @@ namespace AutoRent.Database {
         }
         public void AddClient(ClientEntity client) {
             using (var ctx = new AppDbContext()) {
-                if (ctx.Clients.Any(x => x.PersonalNumber == client.PersonalNumber))
-                {
+                if (ctx.Clients.Any(x => x.PersonalNumber == client.PersonalNumber)) {
                     throw new Exception("Client with such personal number exists!");
                 }
                 ctx.Clients.Add(client);

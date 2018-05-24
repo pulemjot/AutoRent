@@ -10,13 +10,31 @@ namespace AutoRent.Forms {
             refreshCarList();
         }
 
-
         void refreshCarList() {
             try {
                 Cars.DataSource = _mgr.GetCars();
             } catch (Exception ex) {
                 MessageBox.Show(ex.Message, "Load Car List Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        void RefreshCarListButton_Click(Object sender, EventArgs e) {
+            refreshCarList();
+        }
+        void AddCar_Click(Object sender, EventArgs e) {
+            var dlg = new AddCar();
+            dlg.ShowDialog(this);
+            if (dlg.AddedCar != null) {
+                Cars.Add(dlg.AddedCar);
+            }
+        }
+        void EditCar_Click(Object sender, EventArgs e) {
+            DataGridViewSelectedRowCollection rows = CarGridView.SelectedRows;
+            if (rows.Count == 0) { return; }
+            var car = (CarEntity)rows[0].DataBoundItem;
+            var dlg = new EditCar(car);
+            dlg.ShowDialog(this);
+            refreshCarList();
         }
         void RemoveCar_Click(Object sender, EventArgs e) {
             DataGridViewSelectedRowCollection rows = CarGridView.SelectedRows;
@@ -33,27 +51,6 @@ namespace AutoRent.Forms {
             } catch (Exception ex) {
                 MessageBox.Show(ex.Message, "Remove Car Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
-
-        void AddCar_Click(Object sender, EventArgs e) {
-            var dlg = new AddCar();
-            dlg.ShowDialog(this);
-            if (dlg.AddedCar != null) {
-                Cars.Add(dlg.AddedCar);
-            }
-        }
-
-        void EditCar_Click(Object sender, EventArgs e) {
-            DataGridViewSelectedRowCollection rows = CarGridView.SelectedRows;
-            if (rows.Count == 0) { return; }
-            var car = (CarEntity)rows[0].DataBoundItem;
-            var dlg = new EditCar(car);
-            dlg.ShowDialog(this);
-            refreshCarList();
-        }
-
-        void RefreshCarListButton_Click(Object sender, EventArgs e) {
-            refreshCarList();
         }
     }
 }
