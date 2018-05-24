@@ -21,17 +21,10 @@ namespace AutoRent.Forms {
 
         public ClientEntity AddedClient { get; private set; }
 
-        void ButtonSave_Click(Object sender, EventArgs e) {
-            var ctx = new ValidationContext(_client);
-            IList<ValidationResult> errors = new List<ValidationResult>();
-            var sb = new StringBuilder();
-            if (!Validator.TryValidateObject(_client, ctx, errors, true)) {
-                foreach (ValidationResult result in errors) {
-                    sb.AppendLine(result.ErrorMessage);
-                }
-                MessageBox.Show(sb.ToString(), "Form Validation", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
+        void ButtonSave_Click(Object sender, EventArgs e)
+        {
+            if (!ValidateForm()) { return; }
+
             try {
                 _mgr.AddClient(_client);
                 AddedClient = _client;
@@ -39,6 +32,26 @@ namespace AutoRent.Forms {
             } catch (Exception ex) {
                 MessageBox.Show(ex.Message, "Save client error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private bool ValidateForm()
+        {
+            var ctx = new ValidationContext(_client);
+            IList<ValidationResult> errors = new List<ValidationResult>();
+            var sb = new StringBuilder();
+            if (Validator.TryValidateObject(_client, ctx, errors, true))
+            {
+                return true;
+            }
+
+            foreach (ValidationResult result in errors)
+            {
+                sb.AppendLine(result.ErrorMessage);
+            }
+
+            MessageBox.Show(sb.ToString(), "Form Validation", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            return false;
+
         }
     }
 }

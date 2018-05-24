@@ -17,9 +17,9 @@ namespace AutoRent.Forms {
             PhoneNumberBox.DataBindings.Add(nameof(TextBox.Text), _client, nameof(ClientEntity.PhoneNumber));
             EmailBox.DataBindings.Add(nameof(TextBox.Text), _client, nameof(ClientEntity.Email));
             AddressBox.DataBindings.Add(nameof(TextBox.Text), _client, nameof(ClientEntity.Address));
-            RefreshLists();
+            RefreshTable();
         }
-        void RefreshLists() {
+        void RefreshTable() {
             try {
                 RentedCarList.DataSource = _mgr.GetClientWithRents(_client.ID).Rents.Select(x => new CarRentViewModel(x));
             } catch (Exception ex) {
@@ -37,7 +37,7 @@ namespace AutoRent.Forms {
             }
             try {
                 _mgr.ReturnCar(car.ID);
-                RefreshLists();
+                RefreshTable();
             } catch (Exception ex) {
                 MessageBox.Show(ex.Message, "Return Car Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }

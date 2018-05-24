@@ -7,51 +7,54 @@ namespace AutoRent.Forms {
         readonly DbManager _mgr = new DbManager();
         public ViewClients() {
             InitializeComponent();
-            refreshClientList();
+            RefreshClientTable();
         }
 
-        void refreshClientList() {
+        void RefreshClientTable() {
             try {
                 Clients.DataSource = _mgr.GetClients();
             } catch (Exception ex) {
                 MessageBox.Show(ex.Message, "Load Client List Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-        void RefreshClientListButton_Click(Object sender, EventArgs e) {
-            refreshClientList();
-        }
         void AddClient_Click(Object sender, EventArgs e) {
             var dlg = new AddClient();
             dlg.ShowDialog(this);
             if (dlg.AddedClient != null) {
-                Clients.Add(dlg.AddedClient);
+                RefreshClientTable();
             }
         }
+
         void EditClient_Click(Object sender, EventArgs e) {
             DataGridViewSelectedRowCollection rows = ClientGridView.SelectedRows;
             if (rows.Count == 0) { return; }
             var car = (ClientEntity)rows[0].DataBoundItem;
             var dlg = new EditClient(car);
             dlg.ShowDialog(this);
-            refreshClientList();
+            RefreshClientTable();
         }
 
-        void RentCar_Click(Object sender, EventArgs e) {
+        private void RefreshClientListButton_Click(Object sender, EventArgs e) {
+            RefreshClientTable();
+        }
+
+        private void RentCar_Click(Object sender, EventArgs e)
+        {
             DataGridViewSelectedRowCollection rows = ClientGridView.SelectedRows;
             if (rows.Count == 0) { return; }
             var client = (ClientEntity)rows[0].DataBoundItem;
             var dlg = new RentCar(client);
             dlg.ShowDialog(this);
-            refreshClientList();
+            RefreshClientTable();
         }
-        void ReturnCar_Click(Object sender, EventArgs e) {
+
+        private void ReturnCar_Click(Object sender, EventArgs e) {
             DataGridViewSelectedRowCollection rows = ClientGridView.SelectedRows;
             if (rows.Count == 0) { return; }
             var client = (ClientEntity)rows[0].DataBoundItem;
             var dlg = new ReturnCar(client);
             dlg.ShowDialog(this);
-            refreshClientList();
+            RefreshClientTable();
         }
     }
 }
