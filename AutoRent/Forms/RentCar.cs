@@ -37,7 +37,7 @@ namespace AutoRent.Forms {
             }
         }
 
-        private void OnCalculatePriceButtonClick(Object sender, EventArgs e) {
+        void OnCalculatePriceButtonClick(Object sender, EventArgs e) {
             DataGridViewSelectedRowCollection rows = FreeCarGridView.SelectedRows;
             if (rows.Count == 0) { return; }
             var car = (CarEntity)rows[0].DataBoundItem;

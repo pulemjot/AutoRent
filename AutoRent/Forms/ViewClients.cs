@@ -34,12 +34,11 @@ namespace AutoRent.Forms {
             RefreshClientTable();
         }
 
-        private void RefreshClientListButton_Click(Object sender, EventArgs e) {
+        void RefreshClientListButton_Click(Object sender, EventArgs e) {
             RefreshClientTable();
         }
 
-        private void RentCar_Click(Object sender, EventArgs e)
-        {
+        void RentCar_Click(Object sender, EventArgs e) {
             DataGridViewSelectedRowCollection rows = ClientGridView.SelectedRows;
             if (rows.Count == 0) { return; }
             var client = (ClientEntity)rows[0].DataBoundItem;
@@ -48,7 +47,7 @@ namespace AutoRent.Forms {
             RefreshClientTable();
         }
 
-        private void ReturnCar_Click(Object sender, EventArgs e) {
+        void ReturnCar_Click(Object sender, EventArgs e) {
             DataGridViewSelectedRowCollection rows = ClientGridView.SelectedRows;
             if (rows.Count == 0) { return; }
             var client = (ClientEntity)rows[0].DataBoundItem;

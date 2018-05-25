@@ -23,10 +23,8 @@ namespace AutoRent.Forms {
 
         public CarEntity AddedCar { get; private set; }
 
-        void ButtonSave_Click(Object sender, EventArgs e)
-        {
-            if (!ValidateForm())
-            {
+        void ButtonSave_Click(Object sender, EventArgs e) {
+            if (!ValidateForm()) {
                 return;
             }
 
@@ -39,18 +37,15 @@ namespace AutoRent.Forms {
             }
         }
 
-        private bool ValidateForm()
-        {
+        Boolean ValidateForm() {
             var ctx = new ValidationContext(_car);
             IList<ValidationResult> errors = new List<ValidationResult>();
             var sb = new StringBuilder();
-            if (Validator.TryValidateObject(_car, ctx, errors, true))
-            {
+            if (Validator.TryValidateObject(_car, ctx, errors, true)) {
                 return true;
             }
 
-            foreach (ValidationResult result in errors)
-            {
+            foreach (ValidationResult result in errors) {
                 sb.AppendLine(result.ErrorMessage);
             }
 
@@ -66,12 +61,12 @@ namespace AutoRent.Forms {
         }
         void TextBoxDoubleKeyPress(Object sender, KeyPressEventArgs e) {
             if (!Char.IsControl(e.KeyChar) && !Char.IsDigit(e.KeyChar) &&
-                (e.KeyChar != '.')) {
+                e.KeyChar != '.') {
                 e.Handled = true;
             }
 
             // only allow one decimal point
-            if ((e.KeyChar == '.') && (((TextBox)sender).Text.IndexOf('.') > -1)) {
+            if (e.KeyChar == '.' && ((TextBox)sender).Text.IndexOf('.') > -1) {
                 e.Handled = true;
             }
         }

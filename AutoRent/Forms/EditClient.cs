@@ -6,8 +6,7 @@ using System.Windows.Forms;
 using AutoRent.Database;
 
 namespace AutoRent.Forms {
-    partial class EditClient : Form
-    {
+    partial class EditClient : Form {
         readonly DbManager _mgr = new DbManager();
         readonly ClientEntity _client;
 
@@ -22,10 +21,8 @@ namespace AutoRent.Forms {
             AddressBox.DataBindings.Add(nameof(TextBox.Text), _client, nameof(ClientEntity.Address));
         }
 
-        private void ButtonSave_Click(Object sender, EventArgs e)
-        {
-            if (!ValidateForm())
-            {
+        void ButtonSave_Click(Object sender, EventArgs e) {
+            if (!ValidateForm()) {
                 return;
             }
 
@@ -37,18 +34,15 @@ namespace AutoRent.Forms {
             }
         }
 
-        private bool ValidateForm()
-        {
+        Boolean ValidateForm() {
             var ctx = new ValidationContext(_client);
             IList<ValidationResult> errors = new List<ValidationResult>();
             var sb = new StringBuilder();
-            if (Validator.TryValidateObject(_client, ctx, errors, true))
-            {
+            if (Validator.TryValidateObject(_client, ctx, errors, true)) {
                 return true;
             }
 
-            foreach (ValidationResult result in errors)
-            {
+            foreach (ValidationResult result in errors) {
                 sb.AppendLine(result.ErrorMessage);
             }
 

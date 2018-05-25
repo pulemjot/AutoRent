@@ -21,10 +21,8 @@ namespace AutoRent.Forms {
             RentPricePerDayBox.DataBindings.Add(nameof(TextBox.Text), _car, nameof(CarEntity.RentPricePerDay));
         }
 
-        void ButtonSave_Click(Object sender, EventArgs e)
-        {
-            if (!ValidateForm())
-            {
+        void ButtonSave_Click(Object sender, EventArgs e) {
+            if (!ValidateForm()) {
                 return;
             }
 
@@ -36,18 +34,15 @@ namespace AutoRent.Forms {
             }
         }
 
-        private bool ValidateForm()
-        {
+        Boolean ValidateForm() {
             var ctx = new ValidationContext(_car);
             IList<ValidationResult> errors = new List<ValidationResult>();
             var sb = new StringBuilder();
-            if (Validator.TryValidateObject(_car, ctx, errors, true))
-            {
+            if (Validator.TryValidateObject(_car, ctx, errors, true)) {
                 return true;
             }
 
-            foreach (ValidationResult result in errors)
-            {
+            foreach (ValidationResult result in errors) {
                 sb.AppendLine(result.ErrorMessage);
             }
 
