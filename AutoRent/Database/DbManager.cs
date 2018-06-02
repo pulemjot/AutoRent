@@ -26,11 +26,6 @@ namespace AutoRent.Database {
                 return ctx.Cars.ToList();
             }
         }
-        public IList<CarEntity> GetFreeCars() {
-            using (var ctx = new AppDbContext()) {
-                return ctx.Cars.Where(x => x.CurrentClient == null).ToList();
-            }
-        }
         public void AddCar(CarEntity car) {
             using (var ctx = new AppDbContext()) {
                 if (ctx.Cars.Any(x => x.RegNumber == car.RegNumber)) {
@@ -101,6 +96,11 @@ namespace AutoRent.Database {
 
 
         #region Rent/Return
+        public IList<CarEntity> GetFreeCars() {
+            using (var ctx = new AppDbContext()) {
+                return ctx.Cars.Where(x => x.CurrentClient == null).ToList();
+            }
+        }
         public ClientEntity GetClientWithRents(Int32 clientID) {
             using (var ctx = new AppDbContext()) {
                 return ctx.Clients

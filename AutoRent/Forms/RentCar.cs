@@ -62,9 +62,6 @@ namespace AutoRent.Forms {
             } catch (Exception ex) {
                 MessageBox.Show(ex.Message, "Rent Car Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
         }
-
-
     }
 }
